@@ -34,9 +34,11 @@ jobs:
           python-version: "3.12"
 
       - name: Consultar PCA no PNCP
+        if: github.event_name != 'push'
         run: python scripts/extrair_pncp.py
 
       - name: Consultar execução e contratos
+        if: github.event_name != 'push'
         run: python scripts/extrair_ciclo_compras.py
 
       - name: Validar bases atualizadas
