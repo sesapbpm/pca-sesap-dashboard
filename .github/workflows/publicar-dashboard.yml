@@ -50,7 +50,9 @@ jobs:
           touch _site/.nojekyll
 
       - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
+        with:
+          enablement: true
 
       - name: Empacotar publicação
         uses: actions/upload-pages-artifact@v4
