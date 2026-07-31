@@ -1,0 +1,70 @@
+name: Atualizar e publicar dashboard
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "15 5 * * *"
+      timezone: "America/Sao_Paulo"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  atualizar-publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Obter projeto
+        uses: actions/checkout@v6
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Consultar PCA no PNCP
+        run: python scripts/extrair_pncp.py
+
+      - name: Consultar execução e contratos
+        run: python scripts/extrair_ciclo_compras.py
+
+      - name: Validar bases atualizadas
+        run: python scripts/validar_publicacao.py
+
+      - name: Preparar site estático
+        run: |
+          mkdir -p _site/data
+          cp index.html app.js styles.css phase2.css tabs.css execution-finance.css execution-filter.css LogoProjeto.png _site/
+          cp data/pca_sesap.json data/ciclo_compras_sesap.json data/pca_sesap.csv _site/data/
+          touch _site/.nojekyll
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empacotar publicação
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Publicar dashboard
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Enviar alerta de falha
+        if: failure()
+        env:
+          ALERT_EMAIL: sesapbpm@gmail.com
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python scripts/notificar_falha.py

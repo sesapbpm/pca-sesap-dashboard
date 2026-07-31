@@ -1,0 +1,142 @@
+const state={data:null,cycle:null,base:[],filtered:[],page:1,pageSize:12,tracePage:1,tracePageSize:20,activeTab:'planejamento',showAllUnits:false,month:null,dimension:null,dimensionField:'classificacaoNome',metric:'valorTotal',itemSort:'valorTotal'};
+const $=id=>document.getElementById(id);
+const money=v=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(v||0);
+const compact=v=>new Intl.NumberFormat('pt-BR',{notation:'compact',maximumFractionDigits:1}).format(v||0);
+const number=v=>new Intl.NumberFormat('pt-BR',{maximumFractionDigits:2}).format(v||0);
+const shortName=s=>(s||'Não informado').replace(/^ERN\s*-\s*/i,'').replace(/^ERN-/i,'').replace('HOSPITAL REG.','HOSPITAL REGIONAL');
+const sum=(a,f)=>a.reduce((t,x)=>t+(+f(x)||0),0);
+const group=(a,f)=>a.reduce((m,x)=>{const k=f(x)||'Não informado';(m[k]??=[]).push(x);return m},{});
+const colors=['#00843d','#3b82f6','#f59e0b','#765a9b','#e07057','#14b8a6','#64748b','#b87891'];
+const months=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+let categoryColors={};
+
+async function init(){
+  try{
+    const r=await fetch('data/pca_sesap.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);
+    state.data=await r.json();state.base=state.data.itens;
+    try{const ciclo=await fetch('data/ciclo_compras_sesap.json',{cache:'no-store'});if(ciclo.ok)state.cycle=await ciclo.json()}catch(e){console.warn('Fase 2 indisponível',e)}
+    setupFilters();bindEvents();applyFilters();
+    const d=new Date(state.data.metadata.extraidoEm);$('updatedAt').textContent=d.toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'});
+    $('coverage').textContent=`${state.data.metadata.quantidadeItens.toLocaleString('pt-BR')} itens · ${state.data.metadata.quantidadeOrgaos} órgãos/unidades`;
+    $('loading').hidden=true;$('dashboard').hidden=false;
+  }catch(e){$('loading').innerHTML=`Não foi possível abrir a base local.<br><small>${e.message}. Execute pelo arquivo Abrir_Dashboard.bat.</small>`}
+}
+function setupFilters(){
+  const years=[...new Set(state.base.map(x=>x.anoPca))].sort((a,b)=>b-a);$('yearFilter').innerHTML=years.map(y=>`<option selected value="${y}">${y}</option>`).join('');
+  const units=[...new Map(state.base.map(x=>[x.cnpj,shortName(x.nomeUnidade)])).entries()].sort((a,b)=>a[1].localeCompare(b[1]));$('unitFilter').innerHTML='<option value="">Todas as unidades</option>'+units.map(([c,n])=>`<option value="${c}">${n}</option>`).join('');
+  const cats=[...new Set(state.base.map(x=>x.categoria))].sort();categoryColors=Object.fromEntries(cats.map((c,i)=>[c,colors[i%colors.length]]));$('categoryFilter').innerHTML='<option value="">Todas</option>'+cats.map(c=>`<option>${c}</option>`).join('');
+  const modes=[...new Set((state.cycle?.compras||[]).map(x=>x.modalidadeNome||'Não informada'))].sort((a,b)=>a.localeCompare(b,'pt-BR'));$('executionMode').innerHTML='<option value="">Todas as modalidades</option>'+modes.map(m=>`<option value="${escapeHtml(m)}">${escapeHtml(m)}</option>`).join('');
+}
+function bindEvents(){
+  ['yearFilter','unitFilter','categoryFilter'].forEach(id=>$(id).addEventListener('change',()=>{state.page=1;applyFilters()}));
+  let timer;$('searchFilter').addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{state.page=1;applyFilters()},180)});
+  $('clearFilters').onclick=clearAll;$('prevPage').onclick=()=>{state.page--;renderTable()};$('nextPage').onclick=()=>{state.page++;renderTable()};$('exportCsv').onclick=exportCsv;$('itemSort').onchange=()=>{state.itemSort=$('itemSort').value;state.page=1;renderTable()};
+  $('toggleUnits').onclick=()=>{state.showAllUnits=!state.showAllUnits;$('toggleUnits').textContent=state.showAllUnits?'Ver menos':'Ver todas';renderUnits()};
+  $('sidebarToggle').onclick=()=>{document.querySelector('.app-shell').classList.add('sidebar-collapsed')};$('sidebarOpen').onclick=()=>{document.querySelector('.app-shell').classList.remove('sidebar-collapsed')};
+  document.querySelectorAll('[data-dimension]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-dimension]').forEach(x=>x.classList.remove('active'));b.classList.add('active');state.dimensionField=b.dataset.dimension;state.dimension=null;applyFilters()});
+  document.querySelectorAll('[data-metric]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-metric]').forEach(x=>x.classList.remove('active'));b.classList.add('active');state.metric=b.dataset.metric;renderDimension()});
+  document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>openTab(b.dataset.tab));
+  document.querySelectorAll('.sidebar-item[href^="#"]').forEach(a=>a.addEventListener('click',()=>{const target=a.getAttribute('href');openTab(target==='#ciclo'?'execucao':target==='#rastreabilidade'?'rastreabilidade':'planejamento')}));
+  $('traceStatus').onchange=$('traceDeadline').onchange=()=>{state.tracePage=1;renderTrace()};
+  let traceTimer;$('traceSearch').oninput=()=>{clearTimeout(traceTimer);traceTimer=setTimeout(()=>{state.tracePage=1;renderTrace()},180)};
+  $('tracePrev').onclick=()=>{state.tracePage--;renderTrace()};$('traceNext').onclick=()=>{state.tracePage++;renderTrace()};
+  $('executionMode').onchange=renderCycle;$('clearExecutionMode').onclick=()=>{$('executionMode').value='';renderCycle()};
+}
+function openTab(tab){state.activeTab=tab;document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));document.querySelectorAll('[data-tab-content]').forEach(n=>n.hidden=n.dataset.tabContent!==tab);if(tab==='rastreabilidade')renderTrace();window.scrollTo({top:0,behavior:'smooth'})}
+function clearAll(){
+  [...$('yearFilter').options].forEach(o=>o.selected=true);$('unitFilter').value='';$('categoryFilter').value='';$('searchFilter').value='';$('traceStatus').value='';$('traceDeadline').value='';$('traceSearch').value='';$('executionMode').value='';state.month=null;state.dimension=null;state.page=1;state.tracePage=1;applyFilters();
+}
+function applyFilters(){
+  const years=new Set([...$('yearFilter').selectedOptions].map(o=>+o.value)),u=$('unitFilter').value,c=$('categoryFilter').value,q=$('searchFilter').value.trim().toLocaleLowerCase('pt-BR');
+  state.filtered=state.base.filter(x=>years.has(x.anoPca)&&(!u||x.cnpj===u)&&(!c||x.categoria===c)&&(!q||`${x.descricao} ${x.grupoNome} ${x.classificacaoNome}`.toLocaleLowerCase('pt-BR').includes(q))&&(!state.month||(x.dataDesejada&&+x.dataDesejada.slice(5,7)===state.month))&&(!state.dimension||x[state.dimensionField]===state.dimension));
+  renderAll();renderFilterChips();
+}
+function renderAll(){renderKpis();renderCycle();renderTrace();renderTrend();renderCategories();renderUnits();renderMonths();renderDimension();renderTable()}
+function renderFilterChips(){
+  const chips=[];if(state.month)chips.push(['month',`Mês: ${months[state.month-1]}`]);if(state.dimension)chips.push(['dimension',`${state.dimensionField==='grupoNome'?'Grupo':'Classe'}: ${state.dimension}`]);
+  if($('unitFilter').value)chips.push(['unit',`Unidade: ${$('unitFilter').selectedOptions[0].text}`]);if($('categoryFilter').value)chips.push(['category',`Categoria: ${$('categoryFilter').value}`]);
+  $('activeFilters').hidden=!chips.length;$('activeFilters').innerHTML=chips.map(([k,v])=>`<button class="filter-chip" data-remove="${k}" title="Remover filtro">${escapeHtml(v)} ×</button>`).join('');
+  $('activeFilters').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(b.dataset.remove==='month')state.month=null;if(b.dataset.remove==='dimension')state.dimension=null;if(b.dataset.remove==='unit')$('unitFilter').value='';if(b.dataset.remove==='category')$('categoryFilter').value='';applyFilters()});
+}
+function renderCycle(){
+  if(!state.cycle){$('cycleUpdated').textContent='Integração indisponível';$('cycleUpdated').classList.add('contract-warning');return}
+  const years=new Set([...$('yearFilter').selectedOptions].map(o=>+o.value)),unit=$('unitFilter').value,selectedMode=$('executionMode').value;
+  const itemKeys=new Set(state.filtered.map(x=>`${x.cnpj}|${x.anoPca}|${x.codigoUnidade}|${x.numeroItem}`));
+  const modePurchaseIds=new Set(state.cycle.compras.filter(c=>!selectedMode||(c.modalidadeNome||'Não informada')===selectedMode).map(c=>c.idCompra));
+  const allLinks=state.cycle.vinculos.filter(v=>itemKeys.has(v.chaveItemPca));
+  const links=selectedMode?allLinks.filter(v=>v.idCompra&&modePurchaseIds.has(v.idCompra)):allLinks;
+  const linked=links.filter(v=>v.idCompra||v.situacaoCiclo==='Iniciada (confirmada)'||v.situacaoCiclo==='Contrato formalizado');
+  const purchaseIds=new Set(linked.map(v=>v.idCompra).filter(Boolean));
+  const purchases=state.cycle.compras.filter(c=>(!unit||String(c.orgaoEntidadeCnpj)===String(unit))&&([...years].some(y=>+c.anoCompraPncp===y||+c.anoCompraPncp===y-1))&&(!selectedMode||(c.modalidadeNome||'Não informada')===selectedMode));
+  const linkedPurchases=state.cycle.compras.filter(c=>purchaseIds.has(c.idCompra));
+  const contracts=state.cycle.contratos.filter(c=>purchaseIds.has(c.idCompra));
+  $('cyclePurchases').textContent=purchases.length.toLocaleString('pt-BR');$('cycleLinked').textContent=linked.length.toLocaleString('pt-BR');$('cycleLinkedPct').textContent=`${state.filtered.length?(linked.length/state.filtered.length*100).toLocaleString('pt-BR',{maximumFractionDigits:1}):0}% dos itens filtrados`;
+  $('cycleAwarded').textContent=money(sum(linkedPurchases,x=>x.valorTotalHomologado));$('cycleContracts').textContent=contracts.length.toLocaleString('pt-BR');$('cycleContractsNote').textContent=state.cycle.resumo.contratos?'Vínculos confirmados pelo PNCP':'API pública sem retorno de contratos';$('cycleContractsNote').classList.toggle('contract-warning',!state.cycle.resumo.contratos);
+  const plannedValue=sum(state.filtered,x=>x.valorTotal),linkedKeys=new Set(linked.filter(v=>v.idCompra).map(v=>v.chaveItemPca)),linkedPlanned=sum(state.filtered.filter(x=>linkedKeys.has(`${x.cnpj}|${x.anoPca}|${x.codigoUnidade}|${x.numeroItem}`)),x=>x.valorTotal),linkedAwarded=sum(linkedPurchases,x=>x.valorTotalHomologado),executionPct=state.filtered.length?linked.length/state.filtered.length*100:0,financialPct=plannedValue?linkedAwarded/plannedValue*100:0;
+  $('cycleExecutionPct').textContent=`${executionPct.toLocaleString('pt-BR',{maximumFractionDigits:1})}%`;$('cyclePlannedValue').textContent=money(plannedValue);$('cycleLinkedPlanned').textContent=money(linkedPlanned);$('cycleFinancialPct').textContent=`${financialPct.toLocaleString('pt-BR',{maximumFractionDigits:2})}%`;$('cycleFinancialNote').textContent=`${money(linkedAwarded)} homologados em compras relacionadas`;
+  const d=new Date(state.cycle.metadata.extraidoEm);$('cycleUpdated').textContent=`Atualizado em ${d.toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})}`;
+  const confirmed=links.filter(v=>v.tipoVinculo==='Confirmado').length,probable=links.filter(v=>v.tipoVinculo==='Provável').length,max=Math.max(state.filtered.length,1),funnel=[['Itens planejados',state.filtered.length],['Compra provável',probable],['Execução confirmada',confirmed],['Contrato formalizado',contracts.length]];
+  $('cycleFunnel').innerHTML=funnel.map(([label,value])=>`<div class="funnel-row"><span class="funnel-label">${label}</span><span class="funnel-track"><i style="width:${value/max*100}%"></i></span><strong class="funnel-value">${value.toLocaleString('pt-BR')}</strong></div>`).join('');
+  const modes=Object.entries(group(purchases,x=>x.modalidadeNome||'Não informada')).map(([name,rows])=>({name,count:rows.length,value:sum(rows,x=>x.valorTotalHomologado)})).sort((a,b)=>b.count-a.count),modeMax=Math.max(...modes.map(x=>x.count),1);
+  $('purchaseModes').innerHTML=modes.slice(0,7).map(m=>`<div class="mode-row"><span title="${escapeHtml(m.name)}">${escapeHtml(m.name)}</span><span class="mode-bar"><i style="width:${m.count/modeMax*100}%"></i></span><strong>${m.count}</strong></div>`).join('')||'<p class="footnote">Nenhuma compra localizada no recorte.</p>';
+  const recent=[...purchases].sort((a,b)=>String(b.dataPublicacaoPncp).localeCompare(String(a.dataPublicacaoPncp))).slice(0,12);$('purchaseCount').textContent=`${purchases.length.toLocaleString('pt-BR')} compras`;
+  $('purchaseTable').innerHTML=recent.map(c=>`<tr><td><span class="purchase-id">${escapeHtml(c.idCompra)}</span><span class="item-group">${escapeHtml(c.numeroControlePNCP)}</span></td><td><span class="item-title">${escapeHtml(c.objetoCompra)}</span><span class="item-group">Processo ${escapeHtml(c.processo)}</span></td><td>${escapeHtml(shortName(c.unidadeOrgaoNomeUnidade))}</td><td>${escapeHtml(c.modalidadeNome)}</td><td><span class="status-dot">${escapeHtml(c.situacaoCompraNomePncp||'Publicada')}</span></td><td class="number">${money(c.valorTotalEstimado)}</td><td class="number"><strong>${money(c.valorTotalHomologado)}</strong></td><td><a class="external-link" target="_blank" rel="noopener" href="https://cnetmobile.estaleiro.serpro.gov.br/comprasnet-web/public/landing?destino=quadro-informativo&amp;compra=${encodeURIComponent(c.idCompra)}">Abrir ↗</a></td></tr>`).join('')||'<tr><td colspan="8">Nenhuma compra localizada para os filtros atuais.</td></tr>';
+}
+function renderTrace(){
+  if(!state.cycle){$('traceTable').innerHTML='<tr><td colspan="8">A base de execucao nao esta disponivel.</td></tr>';return}
+  const linkMap=new Map(state.cycle.vinculos.map(v=>[v.chaveItemPca,v]));
+  const purchaseMap=new Map(state.cycle.compras.map(c=>[String(c.idCompra),c]));
+  const contractsByPurchase=group(state.cycle.contratos||[],c=>String(c.idCompra));
+  const enriched=state.filtered.map(item=>{
+    const key=`${item.cnpj}|${item.anoPca}|${item.codigoUnidade}|${item.numeroItem}`,link=linkMap.get(key),purchase=link?.idCompra?purchaseMap.get(String(link.idCompra)):null,contracts=link?.idCompra?(contractsByPurchase[String(link.idCompra)]||[]):[];
+    const started=!!(link?.idCompra||link?.situacaoCiclo==='Iniciada (confirmada)'||link?.situacaoCiclo==='Contrato formalizado'),publication=purchase?.dataPublicacaoPncp?.slice(0,10)||null,desired=item.dataDesejada?.slice(0,10)||null;
+    const deadline=started&&publication&&desired?(publication<=desired?'on-time':'late'):'unknown';
+    return{item,link,purchase,contracts,started,deadline};
+  });
+  const started=enriched.filter(x=>x.started),onTime=enriched.filter(x=>x.deadline==='on-time'),contracted=enriched.filter(x=>x.contracts.length||x.link?.situacaoCiclo==='Contrato formalizado');
+  $('traceTotal').textContent=enriched.length.toLocaleString('pt-BR');$('traceStarted').textContent=started.length.toLocaleString('pt-BR');$('traceStartedPct').textContent=`${enriched.length?(started.length/enriched.length*100).toLocaleString('pt-BR',{maximumFractionDigits:1}):0}% dos itens`;$('traceOnTime').textContent=onTime.length.toLocaleString('pt-BR');$('traceContracted').textContent=contracted.length.toLocaleString('pt-BR');
+  const status=$('traceStatus').value,deadline=$('traceDeadline').value,q=$('traceSearch').value.trim().toLocaleLowerCase('pt-BR');
+  const filtered=enriched.filter(x=>(!status||(status==='started'&&x.started)||(status==='not-started'&&!x.started)||(status==='contracted'&&(x.contracts.length||x.link?.situacaoCiclo==='Contrato formalizado')))&&(!deadline||x.deadline===deadline)&&(!q||`${x.item.descricao} ${x.item.nomeUnidade} ${x.item.numeroItem} ${x.purchase?.idCompra||''}`.toLocaleLowerCase('pt-BR').includes(q)));
+  const pages=Math.max(1,Math.ceil(filtered.length/state.tracePageSize));state.tracePage=Math.min(Math.max(1,state.tracePage),pages);const rows=filtered.slice((state.tracePage-1)*state.tracePageSize,state.tracePage*state.tracePageSize);
+  const fmtDate=v=>v?new Date(`${v.slice(0,10)}T12:00:00`).toLocaleDateString('pt-BR'):'-';
+  $('traceTable').innerHTML=rows.map(({item,link,purchase,contracts,started,deadline})=>{
+    const pcaUrl=`https://pncp.gov.br/app/pca/${encodeURIComponent(item.cnpj)}/${item.anoPca}`;
+    const buyUrl=purchase?`https://cnetmobile.estaleiro.serpro.gov.br/comprasnet-web/public/landing?destino=quadro-informativo&compra=${encodeURIComponent(purchase.idCompra)}`:'';
+    const statusTag=started?`<span class="trace-tag started">Iniciado${String(link?.tipoVinculo||'').startsWith('Prov')?' - provavel':''}</span>`:'<span class="trace-tag idle">Nao iniciado</span>';
+    const deadlineTag=deadline==='on-time'?'<span class="trace-tag on-time">No prazo</span>':deadline==='late'?'<span class="trace-tag late">Apos o prazo</span>':'<span class="trace-tag unknown">Nao avaliavel</span>';
+    const contractText=contracts.length?`<span class="trace-tag contracted">${contracts.length} contrato(s)</span>`:'<span class="trace-tag idle">Nao confirmado</span>';
+    return `<tr><td><a class="external-link" href="${pcaUrl}" target="_blank" rel="noopener">PCA ${item.anoPca} / item ${item.numeroItem} ↗</a><span class="item-group">${escapeHtml(item.numeroControlePNCP)}</span></td><td><span class="item-title">${escapeHtml(item.descricao)}</span><span class="item-group">${escapeHtml(item.classificacaoNome||item.grupoNome)}</span></td><td>${escapeHtml(shortName(item.nomeUnidade))}</td><td>${item.anoPca}</td><td>${fmtDate(item.dataDesejada)}</td><td>${statusTag}${purchase?`<a class="trace-buy" href="${buyUrl}" target="_blank" rel="noopener">${escapeHtml(purchase.idCompra)} ↗</a><span class="item-group">Publicada em ${fmtDate(purchase.dataPublicacaoPncp)}</span>`:''}</td><td>${deadlineTag}</td><td>${contractText}</td></tr>`
+  }).join('')||'<tr><td colspan="8">Nenhum item encontrado para estes filtros.</td></tr>';
+  $('tracePageInfo').textContent=`${filtered.length.toLocaleString('pt-BR')} itens - pagina ${state.tracePage} de ${pages}`;$('tracePrev').disabled=state.tracePage<=1;$('traceNext').disabled=state.tracePage>=pages;
+}
+function renderKpis(){
+  const a=state.filtered,total=sum(a,x=>x.valorTotal),units=new Set(a.map(x=>x.cnpj)).size,years=[...new Set(a.map(x=>x.anoPca))].sort();$('kpiValue').textContent=money(total);$('kpiValueNote').textContent=`Soma dos ${a.length.toLocaleString('pt-BR')} itens filtrados`;$('kpiItems').textContent=a.length.toLocaleString('pt-BR');$('kpiItemsNote').textContent=`Em ${years.length} exercício${years.length===1?'':'s'} selecionado${years.length===1?'':'s'}`;$('kpiUnits').textContent=units;$('kpiUnitsNote').textContent=units===1?'Unidade selecionada':'Matriz e filiais com publicação';$('kpiTicket').textContent=money(a.length?total/a.length:0);$('kpiTicketNote').textContent='Valor total ÷ quantidade de itens';
+  const byYear=Object.entries(group(a,x=>x.anoPca)).map(([y,v])=>[+y,sum(v,x=>x.valorTotal)]).sort((x,y)=>x[0]-y[0]);let text='Aplique filtros para construir uma leitura gerencial do planejamento.';if(byYear.length>1){const [p,n]=byYear.slice(-2),pct=p[1]?((n[1]/p[1]-1)*100):0;text=`Entre ${p[0]} e ${n[0]}, o valor planejado ${pct>=0?'cresceu':'recuou'} ${Math.abs(pct).toLocaleString('pt-BR',{maximumFractionDigits:1})}%.`}else if(a.length){const top=Object.entries(group(a,x=>x.categoria)).map(([k,v])=>[k,sum(v,x=>x.valorTotal)]).sort((x,y)=>y[1]-x[1])[0];text=`${top[0]} concentra ${((top[1]/total)*100).toLocaleString('pt-BR',{maximumFractionDigits:1})}% do valor no recorte atual.`}$('insightText').textContent=text;
+}
+function svgLine(container,labels,values){
+  const el=$(container),w=700,h=250,p={l:54,r:18,t:24,b:35},max=Math.max(...values,1),iw=w-p.l-p.r,ih=h-p.t-p.b,x=i=>p.l+(labels.length===1?iw/2:i*iw/(labels.length-1)),y=v=>p.t+ih-v/max*ih;let grid='';for(let i=0;i<5;i++){const v=max*i/4,yy=y(v);grid+=`<line class="grid-line" x1="${p.l}" y1="${yy}" x2="${w-p.r}" y2="${yy}"/><text class="axis-label" x="${p.l-8}" y="${yy+3}" text-anchor="end">${compact(v)}</text>`}const pts=values.map((v,i)=>`${x(i)},${y(v)}`).join(' '),area=`${p.l},${p.t+ih} ${pts} ${w-p.r},${p.t+ih}`;
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}"><defs><linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00843d" stop-opacity=".24"/><stop offset="1" stop-color="#00843d" stop-opacity="0"/></linearGradient></defs>${grid}<polygon class="area" points="${area}"/><polyline class="trend-line" points="${pts}"/>${values.map((v,i)=>`<circle class="point clickable" cx="${x(i)}" cy="${y(v)}" r="6" data-year="${labels[i]}" data-tip="${labels[i]}|${money(v)}"/>`).join('')}${labels.map((l,i)=>`<text class="axis-label" x="${x(i)}" y="${h-8}" text-anchor="middle">${l}</text>`).join('')}</svg>`;bindTips(el);el.querySelectorAll('[data-year]').forEach(n=>n.onclick=()=>selectYear(+n.dataset.year));
+}
+function selectYear(year){[...$('yearFilter').options].forEach(o=>o.selected=+o.value===year);state.page=1;applyFilters()}
+function renderTrend(){const g=group(state.filtered,x=>x.anoPca),labels=Object.keys(g).sort(),values=labels.map(y=>sum(g[y],x=>x.valorTotal));svgLine('trendChart',labels,values)}
+function renderCategories(){
+  const total=sum(state.filtered,x=>x.valorTotal),rows=Object.entries(group(state.filtered,x=>x.categoria)).map(([k,v])=>({k,v:sum(v,x=>x.valorTotal)})).sort((a,b)=>b.v-a.v),visible=rows.slice(0,8);let acc=0;const stops=visible.map(r=>{const from=total?acc/total*100:0;acc+=r.v;return `${categoryColors[r.k]||'#64748b'} ${from}% ${total?acc/total*100:0}%`});$('categoryChart').style.background=`conic-gradient(${stops.join(',')||'#e5ecea 0 100%'})`;$('categoryChart').innerHTML=`<div class="donut-center"><strong>${visible.length}</strong><span>categorias</span></div>`;$('categoryLegend').innerHTML=visible.map(r=>`<div class="legend-row clickable" data-category="${escapeHtml(r.k)}"><i style="background:${categoryColors[r.k]}"></i><span title="${escapeHtml(r.k)}">${escapeHtml(r.k)}</span><strong>${total?(r.v/total*100).toFixed(1):0}%</strong></div>`).join('');$('categoryLegend').querySelectorAll('[data-category]').forEach(n=>n.onclick=()=>{$('categoryFilter').value=n.dataset.category;state.page=1;applyFilters()});
+}
+function renderUnits(){const rows=Object.entries(group(state.filtered,x=>x.cnpj)).map(([k,v])=>({k,name:shortName(v[0].nomeUnidade),v:sum(v,x=>x.valorTotal)})).sort((a,b)=>b.v-a.v),max=rows[0]?.v||1,show=state.showAllUnits?rows:rows.slice(0,7);$('unitChart').innerHTML=show.map((r,i)=>`<div class="rank-row clickable" data-unit="${r.k}"><span class="rank-no">${i+1}</span><span class="rank-name" title="${escapeHtml(r.name)}">${escapeHtml(r.name)}</span><span class="rank-bar"><i style="width:${r.v/max*100}%"></i></span><strong class="rank-value">${compact(r.v)}</strong></div>`).join('')||'<p class="footnote">Sem dados para o recorte.</p>';$('unitChart').querySelectorAll('[data-unit]').forEach(n=>n.onclick=()=>{$('unitFilter').value=n.dataset.unit;state.page=1;applyFilters()})}
+function renderMonths(){
+  const vals=Array(12).fill(0);state.filtered.forEach(x=>{if(x.dataDesejada){const m=+x.dataDesejada.slice(5,7)-1;if(m>=0)vals[m]+=+x.valorTotal||0}});const el=$('monthChart'),w=600,h=210,p={l:45,r:10,t:12,b:30},max=Math.max(...vals,1),bw=(w-p.l-p.r)/12*.58,gap=(w-p.l-p.r)/12;
+  el.innerHTML=`<svg viewBox="0 0 ${w} ${h}">${months.map((n,i)=>{const bh=vals[i]/max*(h-p.t-p.b),x=p.l+i*gap+(gap-bw)/2,y=h-p.b-bh,active=state.month===i+1;return `<rect class="clickable" x="${x}" y="${y}" width="${bw}" height="${bh}" rx="3" fill="${active?'#f59e0b':'#3b82f6'}" data-month="${i+1}" data-tip="${n}|${money(vals[i])}"/><text class="axis-label" x="${x+bw/2}" y="${h-9}" text-anchor="middle">${n.slice(0,3)}</text>`}).join('')}</svg>`;bindTips(el);el.querySelectorAll('[data-month]').forEach(n=>n.onclick=()=>{state.month=state.month===+n.dataset.month?null:+n.dataset.month;state.page=1;applyFilters()});
+}
+function renderDimension(){
+  const years=[...new Set(state.base.map(x=>x.anoPca))].sort(),metric=state.metric,source=state.filtered,rows=Object.entries(group(source,x=>x[state.dimensionField])).map(([name,items])=>{const vals=Object.fromEntries(years.map(y=>[y,sum(items.filter(x=>x.anoPca===y),x=>x[metric])]));return{name,vals,total:sum(items,x=>x[metric])}}).sort((a,b)=>b.total-a.total).slice(0,12),max=Math.max(...rows.flatMap(r=>Object.values(r.vals)),1),fmt=metric==='valorTotal'?compact:number;
+  $('dimensionChart').innerHTML=`<div class="dimension-head"><span>${state.dimensionField==='grupoNome'?'Grupo':'Classe'}</span>${years.map(y=>`<span>${y}</span>`).join('')}<span>Total</span></div>`+rows.map(r=>`<div class="dimension-row" data-dimension-value="${escapeHtml(r.name)}"><span class="dimension-name" title="${escapeHtml(r.name)}">${escapeHtml(r.name)}</span>${years.map(y=>`<span class="year-cell"><span class="year-mini"><i style="width:${r.vals[y]/max*100}%"></i></span><small>${fmt(r.vals[y])}</small></span>`).join('')}<strong class="dimension-total">${metric==='valorTotal'?money(r.total):number(r.total)}</strong></div>`).join('');$('dimensionChart').querySelectorAll('[data-dimension-value]').forEach(n=>n.onclick=()=>{state.dimension=n.dataset.dimensionValue;state.page=1;applyFilters()});
+}
+function renderTable(){
+  const sorted=[...state.filtered].sort((a,b)=>(+b[state.itemSort]||0)-(+a[state.itemSort]||0)),pages=Math.max(1,Math.ceil(sorted.length/state.pageSize));state.page=Math.min(state.page,pages);const start=(state.page-1)*state.pageSize,rows=sorted.slice(start,start+state.pageSize);
+  $('itemsTable').innerHTML=rows.map(x=>`<tr><td><span class="item-id">${escapeHtml(x.numeroControlePNCP)}</span><span class="item-group">Item ${x.numeroItem??'—'}</span></td><td><span class="item-title">${escapeHtml(x.descricao)}</span></td><td><span class="class-name">${escapeHtml(x.classificacaoNome)}</span><span class="group-name">${escapeHtml(x.grupoNome)}</span></td><td>${escapeHtml(shortName(x.nomeUnidade))}</td><td>${x.anoPca}</td><td><span class="tag" style="--cat-color:${categoryColors[x.categoria]||'#64748b'}">${escapeHtml(x.categoria)}</span></td><td class="number">${number(x.quantidade)}</td><td class="number"><strong>${money(x.valorTotal)}</strong></td></tr>`).join('')||'<tr><td colspan="8">Nenhum item encontrado para os filtros selecionados.</td></tr>';
+  $('resultCount').textContent=`${sorted.length.toLocaleString('pt-BR')} resultados`;$('pageInfo').textContent=`Página ${state.page} de ${pages}`;$('prevPage').disabled=state.page<=1;$('nextPage').disabled=state.page>=pages;
+}
+function bindTips(el){el.querySelectorAll('[data-tip]').forEach(n=>{n.onmousemove=e=>{const [a,b]=n.dataset.tip.split('|');$('tooltip').innerHTML=`<strong>${a}</strong><br>${b}`;$('tooltip').hidden=false;$('tooltip').style.left=`${e.clientX+12}px`;$('tooltip').style.top=`${e.clientY+12}px`};n.onmouseleave=()=>$('tooltip').hidden=true})}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function exportCsv(){const fields=['anoPca','cnpj','nomeUnidade','numeroControlePNCP','numeroItem','categoria','classificacaoNome','grupoNome','descricao','quantidade','valorUnitario','valorTotal','dataDesejada'],q=v=>`"${String(v??'').replaceAll('"','""')}"`,csv='\ufeff'+[fields.join(';'),...state.filtered.map(x=>fields.map(f=>q(x[f])).join(';'))].join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='PCA_SESAP_filtrado.csv';a.click();URL.revokeObjectURL(a.href)}
+init();
