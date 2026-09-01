@@ -1,1 +1,2 @@
 @media(min-width:1001px){.cycle-kpis{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.schedule-legend{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px 12px}.schedule-legend span{display:inline-flex;align-items:center;gap:5px;color:#64748b;font-size:8px;font-weight:700;white-space:nowrap}.schedule-legend i{width:8px;height:8px;border-radius:2px}.schedule-legend .done{background:#16a05d}.schedule-legend .ontime{background:#3b82f6}.schedule-legend .late{background:#dc4c4c}.schedule-bar:hover{filter:brightness(.9)}
