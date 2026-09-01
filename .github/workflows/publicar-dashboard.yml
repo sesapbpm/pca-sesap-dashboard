@@ -47,7 +47,7 @@ jobs:
       - name: Preparar site estático
         run: |
           mkdir -p _site/data
-          cp index.html app.js styles.css phase2.css tabs.css execution-finance.css execution-filter.css LogoProjeto.png _site/
+          cp index.html app.js styles.css phase2.css tabs.css execution-finance.css execution-filter.css pncp-integration.css LogoProjeto.png _site/
           cp data/pca_sesap.json data/ciclo_compras_sesap.json data/pca_sesap.csv _site/data/
           touch _site/.nojekyll
 

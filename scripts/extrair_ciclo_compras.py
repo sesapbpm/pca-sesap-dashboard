@@ -16,9 +16,9 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 COMPRAS_API = "https://dadosabertos.compras.gov.br"
-PNCP_API = "https://pncp.gov.br/api/pncp/v1"
+PNCP_API = "https://pncp.gov.br/api/consulta/v1"
 MODALIDADES = [3, 5, 6, 7, 12]
-TIMEOUT = 75
+TIMEOUT = 30
 
 
 def get_json(url: str, retries: int = 5) -> Any | None:
@@ -96,19 +96,23 @@ def buscar_contratos_api(tarefa: tuple[str, str, str]) -> list[dict[str, Any]]:
     )
 
 
-def detalhes_compra(compra: dict[str, Any]) -> tuple[str, list[dict[str, Any]], list[dict[str, Any]]]:
+def detalhes_compra(compra: dict[str, Any]) -> tuple[str, list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     cnpj = compra["orgaoEntidadeCnpj"]
     ano = int(compra["anoCompraPncp"])
     seq = int(compra["sequencialCompraPncp"])
     itens_url = f"{PNCP_API}/orgaos/{cnpj}/compras/{ano}/{seq}/itens?tamanhoPagina=500&pagina=1"
     contratos_url = f"{PNCP_API}/orgaos/{cnpj}/contratos/contratacao/{ano}/{seq}"
-    itens_raw = get_json(itens_url) or []
+    atas_url = f"{PNCP_API}/orgaos/{cnpj}/compras/{ano}/{seq}/atas"
+    itens_raw = get_json(itens_url, retries=1) or []
     if isinstance(itens_raw, dict):
         itens_raw = itens_raw.get("itens") or itens_raw.get("data") or []
-    contratos_raw = get_json(contratos_url) or []
+    contratos_raw = get_json(contratos_url, retries=1) or []
     if isinstance(contratos_raw, dict):
         contratos_raw = contratos_raw.get("data") or [contratos_raw]
-    return compra["idCompra"], itens_raw, contratos_raw
+    atas_raw = get_json(atas_url, retries=1) or [] if compra.get("srp") else []
+    if isinstance(atas_raw, dict):
+        atas_raw = atas_raw.get("data") or atas_raw.get("atas") or [atas_raw]
+    return compra["idCompra"], itens_raw, contratos_raw, atas_raw
 
 
 def status_contrato(contrato: dict[str, Any]) -> str:
@@ -152,43 +156,47 @@ def executar() -> None:
             except Exception as exc:
                 print(f"Aviso compras: {exc}")
     compras = list({c["idCompra"]: c for c in compras}.values())
-    print(f"Compras localizadas: {len(compras)}. Consultando itens e contratos...")
+    codigos_futuros = set()
+    for item_pca in base["itens"]:
+        match = re.fullmatch(r"(\d+)-(\d+)/(\d{4})", str(item_pca.get("numeroContratacaoFutura") or item_pca.get("grupoCodigo") or ""))
+        if match:
+            uasg, numero, ano = match.groups()
+            codigos_futuros.add((item_pca["cnpj"], uasg, int(ano), numero.lstrip("0") or "0"))
+    compras_detalhar = [c for c in compras if (str(c.get("orgaoEntidadeCnpj")), str(c.get("unidadeOrgaoCodigoUnidade")), int(c.get("anoCompraPncp") or 0), str(c.get("numeroCompra") or "").lstrip("0") or "0") in codigos_futuros]
+    print(f"Compras localizadas: {len(compras)}. Consultando detalhes de {len(compras_detalhar)} vínculos oficiais...")
 
     compra_itens: dict[str, list[dict[str, Any]]] = {}
     contratos: list[dict[str, Any]] = []
+    atas: list[dict[str, Any]] = []
     with ThreadPoolExecutor(max_workers=12) as pool:
-        futures = [pool.submit(detalhes_compra, c) for c in compras]
+        futures = [pool.submit(detalhes_compra, c) for c in compras_detalhar]
         for future in as_completed(futures):
             try:
-                id_compra, itens, contratos_compra = future.result()
+                id_compra, itens, contratos_compra, atas_compra = future.result()
                 compra_itens[id_compra] = itens
                 for contrato in contratos_compra:
                     contrato["idCompra"] = contrato.get("idCompra") or id_compra
                     contrato["statusCalculado"] = status_contrato(contrato)
                     contratos.append(contrato)
+                for ata in atas_compra:
+                    ata["idCompra"] = ata.get("idCompra") or id_compra
+                    atas.append(ata)
             except Exception as exc:
                 print(f"Aviso detalhes: {exc}")
 
-    # Segunda fonte: módulo público do Contratos.gov.br. Em caso de instabilidade
-    # (404/429), os contratos diretos do PNCP já consultados acima são preservados.
-    unidades = sorted({str(p["codigoUnidade"]) for p in planos_unicos})
-    tarefas_contrato = [(uasg, f"{ano}-01-01", (date.today() if ano == date.today().year else date(ano, 12, 31)).isoformat()) for uasg in unidades for ano in range(2023, date.today().year + 1)]
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        futures = [pool.submit(buscar_contratos_api, t) for t in tarefas_contrato]
-        for future in as_completed(futures):
-            try:
-                for contrato in future.result():
-                    contrato["statusCalculado"] = status_contrato(contrato)
-                    contratos.append(contrato)
-            except Exception as exc:
-                print(f"Aviso Contratos.gov: {exc}")
+    # Contratos e atas passam a vir do próprio PNCP e conservam o número de
+    # controle da contratação, evitando vínculos indiretos por UASG.
     contratos = list({(c.get("numeroControlePncpContrato") or c.get("numeroControlePNCP") or c.get("numeroContratoEmpenho"), c.get("idCompra")): c for c in contratos}.values())
+    atas = list({(a.get("numeroControlePNCPAta") or a.get("numeroControlePncpAta") or a.get("numeroAtaRegistroPreco"), a.get("idCompra")): a for a in atas}.values())
 
     pgc_indice = {(p.get("orgao"), int(p.get("anoPcaProjetoCompra") or 0), str(p.get("codigoUasg")), int(p.get("numeroItemPncp") or 0)): p for p in pgc}
     compras_por_chave: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
     compras_por_descricao: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
     itens_compras_saida: list[dict[str, Any]] = []
+    compras_oficiais: dict[tuple[str, str, int, str], list[dict[str, Any]]] = defaultdict(list)
     for compra in compras:
+        chave_oficial = (str(compra.get("orgaoEntidadeCnpj")), str(compra.get("unidadeOrgaoCodigoUnidade")), int(compra.get("anoCompraPncp") or 0), str(compra.get("numeroCompra") or "").lstrip("0") or "0")
+        compras_oficiais[chave_oficial].append(compra)
         for item in compra_itens.get(compra["idCompra"], []):
             codigo = str(item.get("catalogoCodigoItem") or item.get("codigoItem") or "")
             registro = {"idCompra": compra["idCompra"], "cnpj": compra["orgaoEntidadeCnpj"], "codigoUnidade": str(compra["unidadeOrgaoCodigoUnidade"]), "anoCompra": compra["anoCompraPncp"], **item}
@@ -204,6 +212,12 @@ def executar() -> None:
     for item in base["itens"]:
         chave = (item["cnpj"], int(item["anoPca"]), str(item["codigoUnidade"]), int(item["numeroItem"] or 0))
         projeto = pgc_indice.get(chave)
+        codigo_futuro = str(item.get("numeroContratacaoFutura") or item.get("grupoCodigo") or "")
+        match_futuro = re.fullmatch(r"(\d+)-(\d+)/(\d{4})", codigo_futuro)
+        oficiais: list[dict[str, Any]] = []
+        if match_futuro:
+            uasg_futura, numero_futuro, ano_futuro = match_futuro.groups()
+            oficiais = compras_oficiais.get((item["cnpj"], uasg_futura, int(ano_futuro), numero_futuro.lstrip("0") or "0"), [])
         candidatos = compras_por_chave.get((item["cnpj"], str(item["codigoUnidade"]), str(item.get("codigoItem") or "")), [])
         if not candidatos:
             candidatos = compras_por_descricao.get((item["cnpj"], str(item["codigoUnidade"]), normalizar(item.get("descricao"))), [])
@@ -212,31 +226,43 @@ def executar() -> None:
             ano_publicacao = int(str(candidato["compra"].get("dataPublicacaoPncp") or "0")[:4] or 0)
             if item["anoPca"] - 1 <= ano_publicacao <= item["anoPca"]:
                 janela.append(candidato)
-        nivel, compra_ref, motivo = "Não iniciada/sem vínculo", None, "Nenhuma contratação pública compatível localizada"
+        nivel, compra_ref, motivo, tipo_vinculo = "Não iniciada/sem vínculo", None, "Nenhuma contratação pública compatível localizada", "Não encontrado"
+        if len(oficiais) == 1:
+            compra_ref = oficiais[0]["idCompra"]
+            nivel, tipo_vinculo = "Compra localizada (confirmada PNCP)", "Confirmado PNCP"
+            motivo = "Vínculo oficial pelo identificador da futura contratação do PCA (UASG-número/ano)"
         if projeto and projeto.get("statusContratacaoExecucao") is True:
-            nivel, motivo = "Iniciada (confirmada)", "Indicador de execução informado pelo PGC"
-        if janela:
+            if not compra_ref:
+                nivel, tipo_vinculo = "Iniciada (confirmada)", "Confirmado"
+                motivo = "Indicador de execução informado pelo PGC"
+        if janela and not compra_ref:
             descricao = normalizar(item.get("descricao"))
             janela.sort(key=lambda c: len(set(descricao.split()) & set(normalizar(c["item"].get("descricao")).split())), reverse=True)
             compra_ref = janela[0]["compra"]["idCompra"]
             nivel = "Compra localizada (provável)" if nivel != "Iniciada (confirmada)" else nivel
+            tipo_vinculo = "Provável" if nivel == "Compra localizada (provável)" else tipo_vinculo
             motivo = "Correspondência por CNPJ, UASG, item de catálogo/descrição e janela do PCA"
         contratos_ref = [c for c in contratos if c.get("idCompra") == compra_ref] if compra_ref else []
         if contratos_ref:
             nivel = "Contrato formalizado"
+            tipo_vinculo = "Confirmado PNCP"
+        atas_ref = [a for a in atas if a.get("idCompra") == compra_ref] if compra_ref else []
         contagem[nivel] += 1
         vinculos.append({
             "chaveItemPca": "|".join(map(str, chave)), "cnpj": item["cnpj"], "anoPca": item["anoPca"],
             "codigoUnidade": item["codigoUnidade"], "numeroItem": item["numeroItem"], "idCompra": compra_ref,
-            "situacaoCiclo": nivel, "tipoVinculo": "Confirmado" if nivel in ("Iniciada (confirmada)", "Contrato formalizado") else ("Provável" if compra_ref else "Não encontrado"),
+            "situacaoCiclo": nivel, "tipoVinculo": tipo_vinculo,
             "motivoVinculo": motivo, "numeroArtefato": projeto.get("numeroArtefato") if projeto else None,
             "statusContratacaoExecucao": projeto.get("statusContratacaoExecucao") if projeto else None,
+            "numeroContratacaoFutura": codigo_futuro or None,
+            "numeroControlePncpCompra": oficiais[0].get("numeroControlePNCP") if len(oficiais) == 1 else None,
+            "quantidadeAtas": len(atas_ref), "quantidadeContratos": len(contratos_ref),
         })
 
     saida = {
         "metadata": {"extraidoEm": datetime.now().astimezone().isoformat(timespec="seconds"), "fontes": [COMPRAS_API, PNCP_API], "modalidadesConsultadas": MODALIDADES, "periodosConsultados": periodos(), "observacao": "Vínculos prováveis não equivalem a confirmação administrativa."},
-        "resumo": {"projetosPgc": len(pgc), "compras": len(compras), "contratos": len(contratos), "itensCompra": sum(map(len, compra_itens.values())), "situacoes": dict(contagem)},
-        "vinculos": vinculos, "compras": compras, "itensCompras": itens_compras_saida, "contratos": contratos,
+        "resumo": {"projetosPgc": len(pgc), "compras": len(compras), "atas": len(atas), "contratos": len(contratos), "itensCompra": sum(map(len, compra_itens.values())), "situacoes": dict(contagem)},
+        "vinculos": vinculos, "compras": compras, "itensCompras": itens_compras_saida, "atas": atas, "contratos": contratos,
     }
     (DATA / "ciclo_compras_sesap.json").write_text(json.dumps(saida, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"Concluído em {time.time()-inicio_exec:.1f}s: {len(pgc)} PGC, {len(compras)} compras, {len(contratos)} contratos.")

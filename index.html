@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="tabs.css">
   <link rel="stylesheet" href="execution-finance.css">
   <link rel="stylesheet" href="execution-filter.css">
+  <link rel="stylesheet" href="pncp-integration.css">
   <style>.mini-select{height:34px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#475569;padding:0 9px;font-size:10px;font-weight:700}</style>
 </head>
 <body>
@@ -98,6 +99,7 @@
           <article><span>Itens com possível execução</span><strong id="cycleLinked">—</strong><small id="cycleLinkedPct">—</small></article>
           <article><span>Valor homologado</span><strong id="cycleAwarded">—</strong><small>Compras com resultado</small></article>
           <article><span>Contratos confirmados</span><strong id="cycleContracts">—</strong><small id="cycleContractsNote">Consulta em andamento</small></article>
+          <article><span>Atas de registro de preço</span><strong id="cycleAtas">—</strong><small>Vinculadas às contratações do recorte</small></article>
         </div>
         <div class="execution-finance">
           <article><span>Execução do PCA</span><strong id="cycleExecutionPct">—</strong><small>Itens com compra relacionada ÷ itens planejados</small></article>
@@ -143,7 +145,7 @@
             </div>
           </header>
           <p class="panel-help">A etiqueta "provavel" indica correspondencia por unidade, item e janela temporal e deve ser validada administrativamente.</p>
-          <div class="table-wrap"><table class="trace-table"><thead><tr><th>PCA / item</th><th>Item demandado</th><th>Unidade</th><th>Ano</th><th>Data desejada</th><th>Compra relacionada</th><th>Prazo</th><th>Contrato</th></tr></thead><tbody id="traceTable"></tbody></table></div>
+          <div class="table-wrap"><table class="trace-table"><thead><tr><th>PCA / item</th><th>Item demandado</th><th>Unidade</th><th>Ano</th><th>Data desejada</th><th>Contratação PNCP</th><th>Prazo</th><th>Ata / contrato</th></tr></thead><tbody id="traceTable"></tbody></table></div>
           <div class="pagination"><button id="tracePrev">Anterior</button><span id="tracePageInfo"></span><button id="traceNext">Proxima</button></div>
         </article>
       </section>

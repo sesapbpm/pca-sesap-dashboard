@@ -84,6 +84,7 @@ def normalizar_item(item: dict[str, Any], plano: dict[str, Any]) -> dict[str, An
         "classificacaoCodigo": item.get("classificacaoSuperiorCodigo"),
         "classificacaoNome": item.get("classificacaoSuperiorNome") or "Não informado",
         "grupoCodigo": item.get("grupoContratacaoCodigo"),
+        "numeroContratacaoFutura": item.get("grupoContratacaoCodigo"),
         "grupoNome": item.get("grupoContratacaoNome") or "Não informado",
         "codigoItem": item.get("codigoItem"),
         "unidadeFornecimento": item.get("unidadeFornecimento"),

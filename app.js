@@ -70,8 +70,10 @@ function renderCycle(){
   const purchases=state.cycle.compras.filter(c=>(!unit||String(c.orgaoEntidadeCnpj)===String(unit))&&([...years].some(y=>+c.anoCompraPncp===y||+c.anoCompraPncp===y-1))&&(!selectedMode||(c.modalidadeNome||'Não informada')===selectedMode));
   const linkedPurchases=state.cycle.compras.filter(c=>purchaseIds.has(c.idCompra));
   const contracts=state.cycle.contratos.filter(c=>purchaseIds.has(c.idCompra));
+  const atas=(state.cycle.atas||[]).filter(a=>purchaseIds.has(a.idCompra));
   $('cyclePurchases').textContent=purchases.length.toLocaleString('pt-BR');$('cycleLinked').textContent=linked.length.toLocaleString('pt-BR');$('cycleLinkedPct').textContent=`${state.filtered.length?(linked.length/state.filtered.length*100).toLocaleString('pt-BR',{maximumFractionDigits:1}):0}% dos itens filtrados`;
   $('cycleAwarded').textContent=money(sum(linkedPurchases,x=>x.valorTotalHomologado));$('cycleContracts').textContent=contracts.length.toLocaleString('pt-BR');$('cycleContractsNote').textContent=state.cycle.resumo.contratos?'Vínculos confirmados pelo PNCP':'API pública sem retorno de contratos';$('cycleContractsNote').classList.toggle('contract-warning',!state.cycle.resumo.contratos);
+  $('cycleAtas').textContent=atas.length.toLocaleString('pt-BR');
   const plannedValue=sum(state.filtered,x=>x.valorTotal),linkedKeys=new Set(linked.filter(v=>v.idCompra).map(v=>v.chaveItemPca)),linkedPlanned=sum(state.filtered.filter(x=>linkedKeys.has(`${x.cnpj}|${x.anoPca}|${x.codigoUnidade}|${x.numeroItem}`)),x=>x.valorTotal),linkedAwarded=sum(linkedPurchases,x=>x.valorTotalHomologado),executionPct=state.filtered.length?linked.length/state.filtered.length*100:0,financialPct=plannedValue?linkedAwarded/plannedValue*100:0;
   $('cycleExecutionPct').textContent=`${executionPct.toLocaleString('pt-BR',{maximumFractionDigits:1})}%`;$('cyclePlannedValue').textContent=money(plannedValue);$('cycleLinkedPlanned').textContent=money(linkedPlanned);$('cycleFinancialPct').textContent=`${financialPct.toLocaleString('pt-BR',{maximumFractionDigits:2})}%`;$('cycleFinancialNote').textContent=`${money(linkedAwarded)} homologados em compras relacionadas`;
   const d=new Date(state.cycle.metadata.extraidoEm);$('cycleUpdated').textContent=`Atualizado em ${d.toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})}`;
@@ -87,11 +89,13 @@ function renderTrace(){
   const linkMap=new Map(state.cycle.vinculos.map(v=>[v.chaveItemPca,v]));
   const purchaseMap=new Map(state.cycle.compras.map(c=>[String(c.idCompra),c]));
   const contractsByPurchase=group(state.cycle.contratos||[],c=>String(c.idCompra));
+  const atasByPurchase=group(state.cycle.atas||[],a=>String(a.idCompra));
   const enriched=state.filtered.map(item=>{
     const key=`${item.cnpj}|${item.anoPca}|${item.codigoUnidade}|${item.numeroItem}`,link=linkMap.get(key),purchase=link?.idCompra?purchaseMap.get(String(link.idCompra)):null,contracts=link?.idCompra?(contractsByPurchase[String(link.idCompra)]||[]):[];
     const started=!!(link?.idCompra||link?.situacaoCiclo==='Iniciada (confirmada)'||link?.situacaoCiclo==='Contrato formalizado'),publication=purchase?.dataPublicacaoPncp?.slice(0,10)||null,desired=item.dataDesejada?.slice(0,10)||null;
     const deadline=started&&publication&&desired?(publication<=desired?'on-time':'late'):'unknown';
-    return{item,link,purchase,contracts,started,deadline};
+    const atas=link?.idCompra?(atasByPurchase[String(link.idCompra)]||[]):[];
+    return{item,link,purchase,contracts,atas,started,deadline};
   });
   const started=enriched.filter(x=>x.started),onTime=enriched.filter(x=>x.deadline==='on-time'),contracted=enriched.filter(x=>x.contracts.length||x.link?.situacaoCiclo==='Contrato formalizado');
   $('traceTotal').textContent=enriched.length.toLocaleString('pt-BR');$('traceStarted').textContent=started.length.toLocaleString('pt-BR');$('traceStartedPct').textContent=`${enriched.length?(started.length/enriched.length*100).toLocaleString('pt-BR',{maximumFractionDigits:1}):0}% dos itens`;$('traceOnTime').textContent=onTime.length.toLocaleString('pt-BR');$('traceContracted').textContent=contracted.length.toLocaleString('pt-BR');
@@ -99,13 +103,14 @@ function renderTrace(){
   const filtered=enriched.filter(x=>(!status||(status==='started'&&x.started)||(status==='not-started'&&!x.started)||(status==='contracted'&&(x.contracts.length||x.link?.situacaoCiclo==='Contrato formalizado')))&&(!deadline||x.deadline===deadline)&&(!q||`${x.item.descricao} ${x.item.nomeUnidade} ${x.item.numeroItem} ${x.purchase?.idCompra||''}`.toLocaleLowerCase('pt-BR').includes(q)));
   const pages=Math.max(1,Math.ceil(filtered.length/state.tracePageSize));state.tracePage=Math.min(Math.max(1,state.tracePage),pages);const rows=filtered.slice((state.tracePage-1)*state.tracePageSize,state.tracePage*state.tracePageSize);
   const fmtDate=v=>v?new Date(`${v.slice(0,10)}T12:00:00`).toLocaleDateString('pt-BR'):'-';
-  $('traceTable').innerHTML=rows.map(({item,link,purchase,contracts,started,deadline})=>{
+  $('traceTable').innerHTML=rows.map(({item,link,purchase,contracts,atas,started,deadline})=>{
     const pcaUrl=`https://pncp.gov.br/app/pca/${encodeURIComponent(item.cnpj)}/${item.anoPca}`;
     const buyUrl=purchase?`https://cnetmobile.estaleiro.serpro.gov.br/comprasnet-web/public/landing?destino=quadro-informativo&compra=${encodeURIComponent(purchase.idCompra)}`:'';
-    const statusTag=started?`<span class="trace-tag started">Iniciado${String(link?.tipoVinculo||'').startsWith('Prov')?' - provavel':''}</span>`:'<span class="trace-tag idle">Nao iniciado</span>';
+    const pncpUrl=purchase?`https://pncp.gov.br/app/editais/${encodeURIComponent(purchase.orgaoEntidadeCnpj)}/${purchase.anoCompraPncp}/${purchase.sequencialCompraPncp}`:'';
+    const official=String(link?.tipoVinculo||'').includes('PNCP'),statusTag=started?`<span class="trace-tag started">${official?'Vínculo oficial PNCP':String(link?.tipoVinculo||'').startsWith('Prov')?'Iniciado - provável':'Iniciado confirmado'}</span>`:'<span class="trace-tag idle">Não iniciado</span>';
     const deadlineTag=deadline==='on-time'?'<span class="trace-tag on-time">No prazo</span>':deadline==='late'?'<span class="trace-tag late">Apos o prazo</span>':'<span class="trace-tag unknown">Nao avaliavel</span>';
-    const contractText=contracts.length?`<span class="trace-tag contracted">${contracts.length} contrato(s)</span>`:'<span class="trace-tag idle">Nao confirmado</span>';
-    return `<tr><td><a class="external-link" href="${pcaUrl}" target="_blank" rel="noopener">PCA ${item.anoPca} / item ${item.numeroItem} ↗</a><span class="item-group">${escapeHtml(item.numeroControlePNCP)}</span></td><td><span class="item-title">${escapeHtml(item.descricao)}</span><span class="item-group">${escapeHtml(item.classificacaoNome||item.grupoNome)}</span></td><td>${escapeHtml(shortName(item.nomeUnidade))}</td><td>${item.anoPca}</td><td>${fmtDate(item.dataDesejada)}</td><td>${statusTag}${purchase?`<a class="trace-buy" href="${buyUrl}" target="_blank" rel="noopener">${escapeHtml(purchase.idCompra)} ↗</a><span class="item-group">Publicada em ${fmtDate(purchase.dataPublicacaoPncp)}</span>`:''}</td><td>${deadlineTag}</td><td>${contractText}</td></tr>`
+    const contractText=`${atas.length?`<span class="trace-tag on-time">${atas.length} ata(s)</span>`:''}${contracts.length?`<span class="trace-tag contracted">${contracts.length} contrato(s)</span>`:'<span class="trace-tag idle">Sem contrato</span>'}`;
+    return `<tr><td><a class="external-link" href="${pcaUrl}" target="_blank" rel="noopener">PCA ${item.anoPca} / item ${item.numeroItem} ↗</a><span class="item-group">Futura contratação: ${escapeHtml(item.numeroContratacaoFutura||item.grupoCodigo||'não informada')}</span><span class="item-group">${escapeHtml(item.numeroControlePNCP)}</span></td><td><span class="item-title">${escapeHtml(item.descricao)}</span><span class="item-group">${escapeHtml(item.classificacaoNome||item.grupoNome)}</span></td><td>${escapeHtml(shortName(item.nomeUnidade))}</td><td>${item.anoPca}</td><td>${fmtDate(item.dataDesejada)}</td><td>${statusTag}${purchase?`<a class="trace-buy" href="${pncpUrl}" target="_blank" rel="noopener">${escapeHtml(purchase.numeroControlePNCP)} · abrir PNCP ↗</a><a class="item-group" href="${buyUrl}" target="_blank" rel="noopener">Compras.gov.br ↗</a><span class="item-group">Publicada em ${fmtDate(purchase.dataPublicacaoPncp)}</span>`:''}</td><td>${deadlineTag}</td><td>${contractText}</td></tr>`
   }).join('')||'<tr><td colspan="8">Nenhum item encontrado para estes filtros.</td></tr>';
   $('tracePageInfo').textContent=`${filtered.length.toLocaleString('pt-BR')} itens - pagina ${state.tracePage} de ${pages}`;$('tracePrev').disabled=state.tracePage<=1;$('traceNext').disabled=state.tracePage>=pages;
 }
