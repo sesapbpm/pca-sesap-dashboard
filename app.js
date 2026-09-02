@@ -14,7 +14,7 @@ async function init(){
   try{
     const r=await fetch('data/pca_sesap.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);
     state.data=await r.json();state.base=state.data.itens;
-    try{const ciclo=await fetch('data/ciclo_compras_sesap.json',{cache:'no-store'});if(ciclo.ok)state.cycle=await ciclo.json()}catch(e){console.warn('Fase 2 indisponível',e)}
+    try{const ciclo=await fetch('data/ciclo_compras_sesap.json',{cache:'no-store'});if(ciclo.ok){state.cycle=await ciclo.json();state.executionLinkMap=new Map((state.cycle.vinculos||[]).map(v=>[v.chaveItemPca,v]))}}catch(e){console.warn('Fase 2 indisponível',e)}
     setupFilters();bindEvents();applyFilters();
     const d=new Date(state.data.metadata.extraidoEm);$('updatedAt').textContent=d.toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'});
     $('coverage').textContent=`${state.data.metadata.quantidadeItens.toLocaleString('pt-BR')} itens · ${state.data.metadata.quantidadeOrgaos} órgãos/unidades`;
@@ -28,7 +28,7 @@ function setupFilters(){
   const modes=[...new Set((state.cycle?.compras||[]).map(x=>x.modalidadeNome||'Não informada'))].sort((a,b)=>a.localeCompare(b,'pt-BR'));$('executionMode').innerHTML='<option value="">Todas as modalidades</option>'+modes.map(m=>`<option value="${escapeHtml(m)}">${escapeHtml(m)}</option>`).join('');
 }
 function bindEvents(){
-  ['yearFilter','unitFilter','categoryFilter'].forEach(id=>$(id).addEventListener('change',()=>{state.page=1;applyFilters()}));
+  ['yearFilter','unitFilter','categoryFilter','planningStatus'].forEach(id=>$(id).addEventListener('change',()=>{state.page=1;applyFilters()}));
   let timer;$('searchFilter').addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{state.page=1;applyFilters()},180)});
   $('clearFilters').onclick=clearAll;$('prevPage').onclick=()=>{state.page--;renderTable()};$('nextPage').onclick=()=>{state.page++;renderTable()};$('exportCsv').onclick=exportCsv;$('itemSort').onchange=()=>{state.itemSort=$('itemSort').value;state.page=1;renderTable()};
   $('toggleUnits').onclick=()=>{state.showAllUnits=!state.showAllUnits;$('toggleUnits').textContent=state.showAllUnits?'Ver menos':'Ver todas';renderUnits()};
@@ -44,19 +44,25 @@ function bindEvents(){
 }
 function openTab(tab){state.activeTab=tab;document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));document.querySelectorAll('[data-tab-content]').forEach(n=>n.hidden=n.dataset.tabContent!==tab);if(tab==='rastreabilidade')renderTrace();window.scrollTo({top:0,behavior:'smooth'})}
 function clearAll(){
-  [...$('yearFilter').options].forEach(o=>o.selected=true);$('unitFilter').value='';$('categoryFilter').value='';$('searchFilter').value='';$('traceStatus').value='';$('traceDeadline').value='';$('traceSearch').value='';$('executionMode').value='';state.month=null;state.dimension=null;state.page=1;state.tracePage=1;applyFilters();
+  [...$('yearFilter').options].forEach(o=>o.selected=true);$('unitFilter').value='';$('categoryFilter').value='';$('planningStatus').value='';$('searchFilter').value='';$('traceStatus').value='';$('traceDeadline').value='';$('traceSearch').value='';$('executionMode').value='';state.month=null;state.dimension=null;state.page=1;state.tracePage=1;applyFilters();
+}
+function planningStatus(item){
+  const key=`${item.cnpj}|${item.anoPca}|${item.codigoUnidade}|${item.numeroItem}`,link=state.executionLinkMap?.get(key);
+  if(link?.situacaoCiclo==='Contrato formalizado')return'completed';
+  if(link?.idCompra||link?.situacaoCiclo==='Iniciada (confirmada)')return'started';
+  return item.dataDesejada?.slice(0,10)>=new Date().toISOString().slice(0,10)?'ontime':'late';
 }
 function applyFilters(){
-  const years=new Set([...$('yearFilter').selectedOptions].map(o=>+o.value)),u=$('unitFilter').value,c=$('categoryFilter').value,q=$('searchFilter').value.trim().toLocaleLowerCase('pt-BR');
-  state.filtered=state.base.filter(x=>years.has(x.anoPca)&&(!u||x.cnpj===u)&&(!c||x.categoria===c)&&(!q||`${x.descricao} ${x.grupoNome} ${x.classificacaoNome}`.toLocaleLowerCase('pt-BR').includes(q))&&(!state.month||(x.dataDesejada&&+x.dataDesejada.slice(5,7)===state.month))&&(!state.dimension||x[state.dimensionField]===state.dimension));
+  const years=new Set([...$('yearFilter').selectedOptions].map(o=>+o.value)),u=$('unitFilter').value,c=$('categoryFilter').value,s=$('planningStatus').value,q=$('searchFilter').value.trim().toLocaleLowerCase('pt-BR');
+  state.filtered=state.base.filter(x=>years.has(x.anoPca)&&(!u||x.cnpj===u)&&(!c||x.categoria===c)&&(!s||planningStatus(x)===s)&&(!q||`${x.descricao} ${x.grupoNome} ${x.classificacaoNome}`.toLocaleLowerCase('pt-BR').includes(q))&&(!state.month||(x.dataDesejada&&+x.dataDesejada.slice(5,7)===state.month))&&(!state.dimension||x[state.dimensionField]===state.dimension));
   renderAll();renderFilterChips();
 }
 function renderAll(){renderKpis();renderCycle();renderTrace();renderTrend();renderCategories();renderUnits();renderMonths();renderDimension();renderTable()}
 function renderFilterChips(){
   const chips=[];if(state.month)chips.push(['month',`Mês: ${months[state.month-1]}`]);if(state.dimension)chips.push(['dimension',`${state.dimensionField==='grupoNome'?'Grupo':'Classe'}: ${state.dimension}`]);
-  if($('unitFilter').value)chips.push(['unit',`Unidade: ${$('unitFilter').selectedOptions[0].text}`]);if($('categoryFilter').value)chips.push(['category',`Categoria: ${$('categoryFilter').value}`]);
+  if($('unitFilter').value)chips.push(['unit',`Unidade: ${$('unitFilter').selectedOptions[0].text}`]);if($('categoryFilter').value)chips.push(['category',`Categoria: ${$('categoryFilter').value}`]);if($('planningStatus').value)chips.push(['status',`Status: ${$('planningStatus').selectedOptions[0].text}`]);
   $('activeFilters').hidden=!chips.length;$('activeFilters').innerHTML=chips.map(([k,v])=>`<button class="filter-chip" data-remove="${k}" title="Remover filtro">${escapeHtml(v)} ×</button>`).join('');
-  $('activeFilters').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(b.dataset.remove==='month')state.month=null;if(b.dataset.remove==='dimension')state.dimension=null;if(b.dataset.remove==='unit')$('unitFilter').value='';if(b.dataset.remove==='category')$('categoryFilter').value='';applyFilters()});
+  $('activeFilters').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(b.dataset.remove==='month')state.month=null;if(b.dataset.remove==='dimension')state.dimension=null;if(b.dataset.remove==='unit')$('unitFilter').value='';if(b.dataset.remove==='category')$('categoryFilter').value='';if(b.dataset.remove==='status')$('planningStatus').value='';applyFilters()});
 }
 function renderCycle(){
   if(!state.cycle){$('cycleUpdated').textContent='Integração indisponível';$('cycleUpdated').classList.add('contract-warning');return}
@@ -71,12 +77,11 @@ function renderCycle(){
   const linkedPurchases=state.cycle.compras.filter(c=>purchaseIds.has(c.idCompra));
   const contracts=state.cycle.contratos.filter(c=>purchaseIds.has(c.idCompra));
   const atas=(state.cycle.atas||[]).filter(a=>purchaseIds.has(a.idCompra));
-  const publishedAwarded=sum(purchases,x=>x.valorTotalHomologado);
   $('cyclePurchases').textContent=purchases.length.toLocaleString('pt-BR');$('cycleLinked').textContent=linked.length.toLocaleString('pt-BR');$('cycleLinkedPct').textContent=linked.length?`${state.filtered.length?(linked.length/state.filtered.length*100).toLocaleString('pt-BR',{maximumFractionDigits:1}):0}% dos itens filtrados`:purchases.length?`Sem vínculo item a item · ${purchases.length.toLocaleString('pt-BR')} compra(s) da unidade`:'0% dos itens filtrados';
-  $('cycleAwarded').textContent=money(publishedAwarded);$('cycleAwardedNote').textContent=purchases.length&&linkedPurchases.length===purchases.length?'Contratações vinculadas ao PCA':linkedPurchases.length?'Contratações publicadas no recorte; vínculo parcial com o PCA':'Contratações publicadas pela unidade; ainda sem vínculo item a item';$('cycleContracts').textContent=contracts.length.toLocaleString('pt-BR');$('cycleContractsNote').textContent=state.cycle.resumo.contratos?'Vínculos confirmados pelo PNCP':'API pública sem retorno de contratos';$('cycleContractsNote').classList.toggle('contract-warning',!state.cycle.resumo.contratos);
+  $('cycleContracts').textContent=contracts.length.toLocaleString('pt-BR');$('cycleContractsNote').textContent=state.cycle.resumo.contratos?'Vínculos confirmados pelo PNCP':'API pública sem retorno de contratos';$('cycleContractsNote').classList.toggle('contract-warning',!state.cycle.resumo.contratos);
   $('cycleAtas').textContent=atas.length.toLocaleString('pt-BR');
-  const plannedValue=sum(state.filtered,x=>x.valorTotal),linkedKeys=new Set(linked.filter(v=>v.idCompra).map(v=>v.chaveItemPca)),linkedPlanned=sum(state.filtered.filter(x=>linkedKeys.has(`${x.cnpj}|${x.anoPca}|${x.codigoUnidade}|${x.numeroItem}`)),x=>x.valorTotal),linkedAwarded=sum(linkedPurchases,x=>x.valorTotalHomologado),executionPct=state.filtered.length?linked.length/state.filtered.length*100:0,financialPct=plannedValue?linkedAwarded/plannedValue*100:0;
-  $('cycleExecutionPct').textContent=`${executionPct.toLocaleString('pt-BR',{maximumFractionDigits:1})}%`;$('cyclePlannedValue').textContent=money(plannedValue);$('cycleLinkedPlanned').textContent=money(linkedPlanned);$('cycleFinancialPct').textContent=`${financialPct.toLocaleString('pt-BR',{maximumFractionDigits:2})}%`;$('cycleFinancialNote').textContent=`${money(linkedAwarded)} homologados em compras relacionadas`;
+  const plannedValue=sum(state.filtered,x=>x.valorTotal),linkedKeys=new Set(linked.filter(v=>v.idCompra).map(v=>v.chaveItemPca)),linkedPlanned=sum(state.filtered.filter(x=>linkedKeys.has(`${x.cnpj}|${x.anoPca}|${x.codigoUnidade}|${x.numeroItem}`)),x=>x.valorTotal),linkedEstimated=sum(linkedPurchases,x=>x.valorTotalEstimado),linkedAwarded=sum(linkedPurchases,x=>x.valorTotalHomologado),executionPct=state.filtered.length?linked.length/state.filtered.length*100:0,estimatedPct=plannedValue?linkedEstimated/plannedValue*100:0,financialPct=plannedValue?linkedAwarded/plannedValue*100:0,estimatedRemaining=Math.max(plannedValue-linkedEstimated,0),awardedRemaining=Math.max(plannedValue-linkedAwarded,0);
+  $('cycleExecutionPct').textContent=`${executionPct.toLocaleString('pt-BR',{maximumFractionDigits:1})}%`;$('cyclePlannedValue').textContent=money(plannedValue);$('cycleLinkedPlanned').textContent=money(linkedPlanned);$('cycleEstimated').textContent=money(linkedEstimated);$('cycleAwarded').textContent=money(linkedAwarded);$('cycleAwardedNote').textContent=`${linkedPurchases.length.toLocaleString('pt-BR')} compra(s) relacionada(s)`;$('cycleEstimatedPct').textContent=`${estimatedPct.toLocaleString('pt-BR',{maximumFractionDigits:2})}%`;$('cycleEstimatedNote').textContent=`Falta executar ${money(estimatedRemaining)} do planejado`;$('cycleFinancialPct').textContent=`${financialPct.toLocaleString('pt-BR',{maximumFractionDigits:2})}%`;$('cycleFinancialNote').textContent=`Falta homologar ${money(awardedRemaining)} do planejado`;
   const d=new Date(state.cycle.metadata.extraidoEm);$('cycleUpdated').textContent=`Atualizado em ${d.toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})}`;
   const confirmed=links.filter(v=>String(v.tipoVinculo||'').startsWith('Confirmado')).length,probable=links.filter(v=>v.tipoVinculo==='Provável').length,max=Math.max(state.filtered.length,1),funnel=[['Itens planejados',state.filtered.length],['Compra provável',probable],['Execução confirmada',confirmed],['Contrato formalizado',contracts.length]];
   $('cycleFunnel').innerHTML=funnel.map(([label,value])=>`<div class="funnel-row"><span class="funnel-label">${label}</span><span class="funnel-track"><i style="width:${value/max*100}%"></i></span><strong class="funnel-value">${value.toLocaleString('pt-BR')}</strong></div>`).join('');
@@ -116,7 +121,7 @@ function renderTrace(){
   $('tracePageInfo').textContent=`${filtered.length.toLocaleString('pt-BR')} itens - pagina ${state.tracePage} de ${pages}`;$('tracePrev').disabled=state.tracePage<=1;$('traceNext').disabled=state.tracePage>=pages;
 }
 function renderKpis(){
-  const a=state.filtered,total=sum(a,x=>x.valorTotal),units=new Set(a.map(x=>x.cnpj)).size,years=[...new Set(a.map(x=>x.anoPca))].sort();$('kpiValue').textContent=money(total);$('kpiValueNote').textContent=`Soma dos ${a.length.toLocaleString('pt-BR')} itens filtrados`;$('kpiItems').textContent=a.length.toLocaleString('pt-BR');$('kpiItemsNote').textContent=`Em ${years.length} exercício${years.length===1?'':'s'} selecionado${years.length===1?'':'s'}`;$('kpiUnits').textContent=units;$('kpiUnitsNote').textContent=units===1?'Unidade selecionada':'Matriz e filiais com publicação';$('kpiTicket').textContent=money(a.length?total/a.length:0);$('kpiTicketNote').textContent='Valor total ÷ quantidade de itens';
+  const a=state.filtered,total=sum(a,x=>x.valorTotal),units=new Set(a.map(x=>x.cnpj)).size,years=[...new Set(a.map(x=>x.anoPca))].sort(),ticket=category=>{const rows=a.filter(x=>x.categoria===category),qty=sum(rows,x=>x.quantidade);return qty?sum(rows,x=>x.valorTotal)/qty:0};$('kpiValue').textContent=money(total);$('kpiValueNote').textContent=`Soma dos ${a.length.toLocaleString('pt-BR')} itens filtrados`;$('kpiItems').textContent=a.length.toLocaleString('pt-BR');$('kpiItemsNote').textContent=`Em ${years.length} exercício${years.length===1?'':'s'} selecionado${years.length===1?'':'s'}`;$('kpiUnits').textContent=units;$('kpiUnitsNote').textContent=units===1?'Unidade selecionada':'Matriz e filiais com publicação';$('kpiTicketMaterial').textContent=money(ticket('Material'));$('kpiTicketService').textContent=money(ticket('Serviço'));$('kpiTicketTic').textContent=money(ticket('Soluções de TIC'));
   const byYear=Object.entries(group(a,x=>x.anoPca)).map(([y,v])=>[+y,sum(v,x=>x.valorTotal)]).sort((x,y)=>x[0]-y[0]);let text='Aplique filtros para construir uma leitura gerencial do planejamento.';if(byYear.length>1){const [p,n]=byYear.slice(-2),pct=p[1]?((n[1]/p[1]-1)*100):0;text=`Entre ${p[0]} e ${n[0]}, o valor planejado ${pct>=0?'cresceu':'recuou'} ${Math.abs(pct).toLocaleString('pt-BR',{maximumFractionDigits:1})}%.`}else if(a.length){const top=Object.entries(group(a,x=>x.categoria)).map(([k,v])=>[k,sum(v,x=>x.valorTotal)]).sort((x,y)=>y[1]-x[1])[0];text=`${top[0]} concentra ${((top[1]/total)*100).toLocaleString('pt-BR',{maximumFractionDigits:1})}% do valor no recorte atual.`}$('insightText').textContent=text;
 }
 function svgLine(container,labels,values){

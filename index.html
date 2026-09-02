@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="phase2.css">
   <link rel="stylesheet" href="tabs.css">
   <link rel="stylesheet" href="execution-finance.css">
+  <link rel="stylesheet" href="dashboard-adjustments.css">
   <link rel="stylesheet" href="execution-filter.css">
   <link rel="stylesheet" href="pncp-integration.css">
   <style>.mini-select{height:34px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#475569;padding:0 9px;font-size:10px;font-weight:700}</style>
@@ -66,6 +67,7 @@
       <label><span>Ano do PCA</span><select id="yearFilter" multiple></select></label>
       <label class="wide"><span>Unidade / filial</span><select id="unitFilter"><option value="">Todas as unidades</option></select></label>
       <label><span>Categoria</span><select id="categoryFilter"><option value="">Todas</option></select></label>
+      <label id="planningStatusWrap"><span>Status do planejamento</span><select id="planningStatus"><option value="">Todos</option><option value="started">Iniciado</option><option value="completed">Concluído</option><option value="late">Atrasado</option><option value="ontime">No prazo</option></select></label>
       <label class="search"><span>Buscar item ou grupo</span><input id="searchFilter" type="search" placeholder="Ex.: medicamentos, manutenção…"></label>
       <button id="clearFilters" class="secondary clear-all">× Remover todos os filtros</button>
     </section>
@@ -77,7 +79,9 @@
         <article class="kpi primary"><span>Valor planejado</span><strong id="kpiValue">—</strong><small id="kpiValueNote"></small></article>
         <article class="kpi"><span>Itens do PCA</span><strong id="kpiItems">—</strong><small id="kpiItemsNote"></small></article>
         <article class="kpi"><span>Unidades ativas</span><strong id="kpiUnits">—</strong><small id="kpiUnitsNote"></small></article>
-        <article class="kpi"><span>Ticket médio por item</span><strong id="kpiTicket">—</strong><small id="kpiTicketNote"></small></article>
+        <article class="kpi"><span>Ticket médio · material</span><strong id="kpiTicketMaterial">—</strong><small>Valor ÷ quantidade de materiais</small></article>
+        <article class="kpi"><span>Ticket médio · serviço</span><strong id="kpiTicketService">—</strong><small>Valor ÷ quantidade de serviços</small></article>
+        <article class="kpi"><span>Ticket médio · TIC</span><strong id="kpiTicketTic">—</strong><small>Valor ÷ quantidade de soluções de TIC</small></article>
       </section>
 
       <section class="insight-strip" data-tab-content="planejamento">
@@ -98,14 +102,16 @@
           <article><span>Itens com execução</span><strong id="cycleLinked">—</strong><small id="cycleLinkedPct">—</small></article>
           <article><span>Execução do PCA</span><strong id="cycleExecutionPct">—</strong><small>Itens iniciados ÷ itens planejados</small></article>
           <article><span>Valor planejado iniciado</span><strong id="cycleLinkedPlanned">—</strong><small>Itens com contratação relacionada</small></article>
-          <article><span>Valor homologado</span><strong id="cycleAwarded">—</strong><small id="cycleAwardedNote">Contratações publicadas no recorte</small></article>
+          <article><span>Valor estimado relacionado</span><strong id="cycleEstimated">—</strong><small>Compras relacionadas ao PCA</small></article>
+          <article><span>Valor homologado relacionado</span><strong id="cycleAwarded">—</strong><small id="cycleAwardedNote">Compras relacionadas ao PCA</small></article>
           <article><span>Contratos confirmados</span><strong id="cycleContracts">—</strong><small id="cycleContractsNote">Consulta em andamento</small></article>
         </div>
         <div class="execution-finance">
-          <article><span>Compras relacionadas</span><strong id="cyclePurchases">—</strong><small>Contratações no recorte dos filtros</small></article>
+          <article><span>Compras publicadas</span><strong id="cyclePurchases">—</strong><small>Contratações da unidade no recorte</small></article>
           <article><span>Valor total planejado</span><strong id="cyclePlannedValue">—</strong><small>No recorte dos filtros</small></article>
           <article><span>Atas de registro de preço</span><strong id="cycleAtas">—</strong><small>Vinculadas às contratações do recorte</small></article>
-          <article><span>Execução financeira</span><strong id="cycleFinancialPct">—</strong><small id="cycleFinancialNote">Valor homologado relacionado ÷ valor planejado</small></article>
+          <article><span>Execução pelo valor estimado</span><strong id="cycleEstimatedPct">—</strong><small id="cycleEstimatedNote">Estimado relacionado ÷ planejado</small></article>
+          <article><span>Execução pelo valor homologado</span><strong id="cycleFinancialPct">—</strong><small id="cycleFinancialNote">Homologado relacionado ÷ planejado</small></article>
         </div>
         <div class="grid two cycle-grid">
           <article class="panel">

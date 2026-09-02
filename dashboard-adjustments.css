@@ -1,0 +1,5 @@
+.filter-panel{grid-template-columns:145px minmax(210px,1.35fr) 145px 165px minmax(200px,1fr) auto}
+.kpi-grid,.cycle-kpis{grid-template-columns:repeat(3,1fr)}
+.execution-finance{grid-template-columns:repeat(5,1fr)}
+@media(max-width:1000px){.filter-panel,.kpi-grid,.cycle-kpis,.execution-finance{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.filter-panel{grid-template-columns:1fr}.kpi-grid,.cycle-kpis,.execution-finance{grid-template-columns:1fr 1fr}}
