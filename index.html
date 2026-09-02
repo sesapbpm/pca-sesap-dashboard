@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="dashboard-adjustments.css">
   <link rel="stylesheet" href="execution-filter.css">
   <link rel="stylesheet" href="pncp-integration.css">
+  <link rel="stylesheet" href="calendar.css?v=20260902">
   <style>.mini-select{height:34px;border:1px solid var(--line);border-radius:8px;background:#fff;color:#475569;padding:0 9px;font-size:10px;font-weight:700}</style>
 </head>
 <body>
@@ -25,7 +26,7 @@
       <a class="sidebar-item" href="#evolucao"><b>↗</b><span>Evolução anual</span></a>
       <a class="sidebar-item" href="#unidades"><b>✚</b><span>Unidades da rede</span></a>
       <a class="sidebar-item" href="#ciclo"><b>◎</b><span>Execução e contratos</span></a>
-      <a class="sidebar-item" href="#rastreabilidade"><b>⌘</b><span>Rastreabilidade</span></a>
+      <a class="sidebar-item" href="#rastreabilidade"><b>▦</b><span>Calendário de contratações</span></a>
       <a class="sidebar-item" href="#detalhamento"><b>≡</b><span>Detalhamento</span></a>
       <span class="sidebar-section">DADOS</span>
       <a class="sidebar-item" href="data/pca_sesap.csv" download><b>⇩</b><span>Baixar base completa</span></a>
@@ -60,7 +61,7 @@
     <nav class="main-tabs" aria-label="Fases do painel">
       <button class="active" data-tab="planejamento"><span>Fase 1</span>Planejamento</button>
       <button data-tab="execucao"><span>Fase 2</span>Execução</button>
-      <button data-tab="rastreabilidade"><span>Integração</span>Rastreabilidade</button>
+      <button data-tab="rastreabilidade"><span>Monitoramento</span>Calendário</button>
     </nav>
 
     <section class="filter-panel" aria-label="Filtros do painel">
@@ -132,27 +133,31 @@
 
       <section class="trace-section" id="rastreabilidade" data-tab-content="rastreabilidade" hidden>
         <header class="phase-header">
-          <div><span class="overline">PCA · COMPRA · CONTRATO</span><h2>Rastreabilidade dos itens planejados</h2><p>Consulte o registro original e acompanhe se a contratação foi iniciada até a data desejada no PCA.</p></div>
-          <span id="traceUpdated" class="update-pill">Integração PNCP / Compras.gov.br</span>
+          <div><span class="overline">CALENDÁRIO INTEGRADO · PCA · PNCP</span><h2>Agenda das contratações da SESAP</h2><p>Previsão por área técnica, categoria e situação da compra, integrada ao planejamento e à execução.</p></div>
+          <span id="calendarUpdated" class="update-pill">Calendários 2026 e 2027</span>
         </header>
-        <div class="trace-kpis">
-          <article><span>Itens no recorte</span><strong id="traceTotal">-</strong><small>Conforme filtros gerais</small></article>
-          <article><span>Com compra relacionada</span><strong id="traceStarted">-</strong><small id="traceStartedPct">-</small></article>
-          <article><span>Iniciados no prazo</span><strong id="traceOnTime">-</strong><small>Publicacao ate a data desejada</small></article>
-          <article><span>Com contrato</span><strong id="traceContracted">-</strong><small>Vinculo confirmado na base</small></article>
+        <div class="calendar-filters">
+          <select id="calendarYear" class="mini-select"><option value="">Todos os anos</option></select>
+          <select id="calendarArea" class="mini-select"><option value="">Todas as áreas técnicas</option></select>
+          <select id="calendarCategory" class="mini-select"><option value="">Todas as categorias</option></select>
+          <select id="calendarStatus" class="mini-select"><option value="">Todos os status</option><option>Iniciado</option><option>Concluído</option><option>Atrasado</option><option>No prazo</option></select>
+          <input id="calendarSearch" class="trace-search" type="search" placeholder="Buscar objeto ou contratação">
+          <button id="calendarClear" class="secondary" type="button">Limpar filtros</button>
         </div>
-        <article class="panel trace-panel">
-          <header class="trace-toolbar">
-            <div><span class="overline">ITEM A ITEM</span><h2>Situacao da futura contratacao</h2></div>
-            <div class="trace-filters">
-              <select id="traceStatus" class="mini-select"><option value="">Todos os status</option><option value="started">Iniciados</option><option value="not-started">Nao iniciados</option><option value="contracted">Com contrato</option></select>
-              <select id="traceDeadline" class="mini-select"><option value="">Todos os prazos</option><option value="on-time">No prazo</option><option value="late">Apos o prazo</option><option value="unknown">Nao avaliavel</option></select>
-              <input id="traceSearch" class="trace-search" type="search" placeholder="Buscar item, compra ou unidade">
-            </div>
-          </header>
-          <p class="panel-help">A etiqueta "provavel" indica correspondencia por unidade, item e janela temporal e deve ser validada administrativamente.</p>
-          <div class="table-wrap"><table class="trace-table"><thead><tr><th>PCA / item</th><th>Item demandado</th><th>Unidade</th><th>Ano</th><th>Data desejada</th><th>Contratação PNCP</th><th>Prazo</th><th>Ata / contrato</th></tr></thead><tbody id="traceTable"></tbody></table></div>
-          <div class="pagination"><button id="tracePrev">Anterior</button><span id="tracePageInfo"></span><button id="traceNext">Proxima</button></div>
+        <div class="trace-kpis calendar-kpis">
+          <article><span>Contratações previstas</span><strong id="calendarTotal">-</strong><small>No recorte selecionado</small></article>
+          <article><span>Vinculadas ao PCA</span><strong id="calendarMatched">-</strong><small id="calendarMatchedPct">-</small></article>
+          <article><span>Valor planejado</span><strong id="calendarPlanned">-</strong><small>Grupos correlacionados</small></article>
+          <article><span>Em execução</span><strong id="calendarStarted">-</strong><small>Compras iniciadas ou concluídas</small></article>
+        </div>
+        <article class="panel calendar-panel">
+          <header><div><span class="overline">DISTRIBUIÇÃO MENSAL</span><h2>Previsão de abertura das contratações</h2></div><div class="schedule-legend"><span><i class="done"></i>Iniciado/concluído</span><span><i class="ontime"></i>No prazo</span><span><i class="late"></i>Atrasado</span></div></header>
+          <div id="calendarMonths" class="calendar-months"></div>
+        </article>
+        <article class="panel trace-panel calendar-table-panel">
+          <header><div><span class="overline">CONTRATAÇÃO A CONTRATAÇÃO</span><h2>Agenda por área técnica</h2></div><span id="calendarCount" class="update-pill"></span></header>
+          <p class="panel-help">Vínculos de 2027 usam o identificador oficial. Em 2026, “provável” indica correlação por objeto e categoria e requer validação administrativa.</p>
+          <div class="table-wrap"><table class="trace-table"><thead><tr><th>Abertura</th><th>Conclusão</th><th>Objeto</th><th>Área técnica</th><th>Categoria</th><th>Contratação do PCA</th><th>Situação</th><th class="number">Planejado</th><th>Execução</th></tr></thead><tbody id="calendarTable"></tbody></table></div>
         </article>
       </section>
 

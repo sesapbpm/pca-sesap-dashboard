@@ -1,0 +1,3444 @@
+{
+  "contratacoes": [
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-110/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS PARA ESTRUTURAÇÃO DOS ALMOXARIFADOS",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2026-01-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-139/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS TÉCNICOS ARQUIVÍSTICOS E GESTÃO DA INFORMAÇÃO",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": "2027-09-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-28/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE NOBREAKS",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-02-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-123/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE CAMINHÃO (UNICAT)",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-03-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-136/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE MÃO-DE-OBRA - MOTORISTAS  B e D",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-03-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-116/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SUPORTE TÉCNICO, MANUTENÇÃO E OPERAÇÃO DE FIBRA ÓPTICA",
+      "areaTecnica": "",
+      "abertura": "2026-03-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-37/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LICENÇAS DE SOFTWARES",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-03-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-160/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MOBILIÁRIO COMUM PARA  AS UNIDADES DE SAÚDE DA REDE SESAP",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-04-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-85/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE EQUIPAMENTOS",
+      "areaTecnica": "",
+      "abertura": "2026-04-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-82/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS DE ORTOPEDIA",
+      "areaTecnica": "",
+      "abertura": "2026-04-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-55/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS DE CME",
+      "areaTecnica": "",
+      "abertura": "2026-04-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-29/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS DE MANUTENÇÃO E REDES",
+      "areaTecnica": "",
+      "abertura": "2026-04-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-126/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE VEÍCULOS HATCH / PICKUP",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-159/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE MANUTENÇÃO PREDIAL",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-165/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE MANUTENÇÃO PREDIAL",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-166/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE MANUTENÇÃO PREDIAL",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-188/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE CIRURGIAS UROLÓGICAS E GINECOLÓGICAS",
+      "areaTecnica": "CAS",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-167/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA A REDE MATERNO INFANTIL",
+      "areaTecnica": "CAS",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-96/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS DE CME",
+      "areaTecnica": "",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-65/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "MANUTENÇÃO DE EQUIPAMENTOS ODONTOLÓGICOS",
+      "areaTecnica": "",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-10-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-62/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EXAMES LABORATORIAIS",
+      "areaTecnica": "",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-10-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-30/2027",
+      "categoriaOriginal": "TIC",
+      "categoria": "Soluções de TIC",
+      "objeto": "AQUISIÇÃO DE SERVIDORES HIPERCONVERGENTES PARA DATACENTER",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-05-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-164/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE EQUIPAMENTOS HOSPITALARES",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-169/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS PARA ODONTOLOGIA",
+      "areaTecnica": "CAS",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-10-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-182/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "MANUTENÇÃO DE EQUIPAMENTOS DE LABORATÓRIOS",
+      "areaTecnica": "CAS - SAEAD - LAB",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-179/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-171/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CUTELARIA PARA O CERAE",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-02-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-175/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS PARA FISIOTERAPIA",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-09-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-161/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE EQUIPAMENTOS MÉDICO-HOSPITALARES,DESTINADO A AMPLIAÇÃO E SUBSTITUIÇÃO",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-149/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO GÊNEROS ALIMENTÍCIOS PERECÍVEIS ORIGEM ANIMAL E PÃES - CAPITAL",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-133/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS CONTÍNUOS PARA CONTROLE DE VETORES",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-120/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "FORNECIMENTO DE ÁGUA E DE ESGOTOS DAS UNIDADES DA ESTRUTURA DA SESAP CAPITAL E INTERIOR",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-102/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS DE LAVANDERIA",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-89/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE EMPRESA PARA SERVIÇO DE OPME",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-09-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-86/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇO PARA CONTROLE DE QUALIDADE",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-83/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS DE LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-80/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "INSUMOS PARA LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-74/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE MANUTENÇÃO DE EQUIPAMENTO",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-70/2027",
+      "categoriaOriginal": "CONTRATAÇÃO DE TIC",
+      "categoria": "Soluções de TIC",
+      "objeto": "CONTRATAÇÃO DE EMPRESA PARA LOCAÇÃO DE SOFTWARE",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-59/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇO PARA REALIZAÇÃO DE EVENTOS",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-56/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAL GRÁFICO",
+      "areaTecnica": "",
+      "abertura": "2026-06-01",
+      "conclusao": "2027-02-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-148/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO GÊNEROS ALIMENTÍCIOS PERECÍVEIS - INTERIOR",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-152/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO DE GÊNEROS ALIMENTÍCIOS NÃO PERECÍVEIS - CAPITAL",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-151/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO DE GÊNEROS ALIMENTÍCIOS NÃO PERECÍVEIS- INTERIOR",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-150/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO DE GÊNEROS ALIMENTÍCIOS PERECÍVEIS HORTIFRUTI- CAPITAL",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-84/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS DE LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-02-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-77/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS PARA ARMAZENAMENTO REFRIGERADO",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-09-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-75/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE MANUTENÇÃO DE EQUIPAMENTOS",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-71/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE MANUTENÇÃO DE QUIPAMENTOS",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-69/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE CONSULTORIAS",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-58/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "ARTIGOS ESPORTIVOS",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-57/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EXAMES LABORATORIAIS",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-09-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-52/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EXAMES LABORATORIAIS",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-51/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAL DE CONSUMO PARA O NÚCLEO  DE ATENDIMENTO AO FISSURADO",
+      "areaTecnica": "CAS - CERAE",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-50/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAL MÉDICO",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-49/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAL MÉDICO",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-48/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EXAMES LABORATORIAIS",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-47/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAL MÉDICO",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-46/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA ODONTOLOGIA",
+      "areaTecnica": "",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-32/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS DE VIDEO E NOTEBOOKS",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-31/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "STORAGE DE ARMAZENAMENTO FRIO",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-22/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSTRUMENTOS,EQUIPAMENTOS E SUPRIMENTOS PARA PICS",
+      "areaTecnica": "CGTES - QVT",
+      "abertura": "2026-07-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-163/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE EQUIPAMENTOS HOSPITALARES",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-08-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-162/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "MANUTENÇÃO DE EQUIPAMENTOS MÉDICO HOSPITALARES C/ FORNECIMENTO DE PEÇAS",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-08-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-111/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS PARA LAVANDERIAS HOSPITALARES",
+      "areaTecnica": "",
+      "abertura": "2026-08-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-109/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE UTENSÍLIOS DE LIMPEZA DURÁVEIS",
+      "areaTecnica": "",
+      "abertura": "2026-08-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-103/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS DE CONSUMO- SANEANTES",
+      "areaTecnica": "",
+      "abertura": "2026-08-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-101/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE UTENSILIOS DE LIMPERA- ROTATIVOS",
+      "areaTecnica": "",
+      "abertura": "2026-08-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-54/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEIOS AUXILIARES DE LOCOMOÇÃO",
+      "areaTecnica": "",
+      "abertura": "2026-08-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-53/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "ÓRTESES E PRÓTESES",
+      "areaTecnica": "",
+      "abertura": "2026-08-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-87/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "EXAMES LABORATORIAIS  - GASOMETRIA",
+      "areaTecnica": "CAS - SAEAD - LAB",
+      "abertura": "2026-09-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-124/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE AMBULÂNCIAS",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-09-01",
+      "conclusao": "2027-10-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-114/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS DE CONSUMO- DESINFECÇÃO DE SUPERFÍCIES",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2026-09-01",
+      "conclusao": "2027-02-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-108/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS DE CONSUMO - EXPEDIENTE - PAPÉIS",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2026-09-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-33/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA MANUTENÇÃO DE COMPUTADORES E REDES",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-09-01",
+      "conclusao": "2027-09-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-106/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS DE CONSUMO- HIGIENE DAS MÃOS",
+      "areaTecnica": "",
+      "abertura": "2026-09-01",
+      "conclusao": "2027-02-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-107/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS DE CONSUMO- ACONDICIONAMENTO E EMBALAGENS",
+      "areaTecnica": "",
+      "abertura": "2026-09-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-98/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "EXAMES DE LABORATÓRIO",
+      "areaTecnica": "CAS - SAEAD - LAB",
+      "abertura": null,
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-154/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO FÓRMULAS INFANTIS",
+      "areaTecnica": "",
+      "abertura": "2026-10-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-121/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE MANUTENÇÃO DE VEÍCULOS",
+      "areaTecnica": "",
+      "abertura": "2026-10-01",
+      "conclusao": "2027-10-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-112/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS PARA EVENTOS",
+      "areaTecnica": "",
+      "abertura": "2026-10-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-104/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE DESCARTÁVEIS",
+      "areaTecnica": "",
+      "abertura": "2026-10-01",
+      "conclusao": "2027-02-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-99/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS DE LIMPEZA - DIVERSOS",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2026-10-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-79/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2026-10-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-78/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2026-10-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-66/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE MANUTENÇÃO DE EQUIPAMENTOS",
+      "areaTecnica": "",
+      "abertura": "2026-10-01",
+      "conclusao": "2027-10-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-38/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE TELEFONIA VOIP",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-10-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-113/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS DE EXPEDIENTE",
+      "areaTecnica": "",
+      "abertura": "2026-11-01",
+      "conclusao": "2027-03-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-68/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2026-11-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-63/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE CONSULTORIA",
+      "areaTecnica": "",
+      "abertura": "2026-11-01",
+      "conclusao": "2027-11-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-145/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO COLCHÃO HOSPITALAR",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-146/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO GÁS DE COZINHA",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-09-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-147/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO ÁGUA MINERAL",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-155/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO EQUIPAMENTOS E APARELHOS DE COZINHA",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-153/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA O FORNECIMENTO DE ALIMENTAÇÃO PREPARADA",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-156/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO UTENSÍLIOS DE COZINHA",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-135/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇO DE FORNECIMENTO DE ENERGIA ELÉTRICA PARA ATENDER AS NECESSIDADES DE FUNCIONAMENTO",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-127/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE PRODUTOS E SERVIÇOS POR MEIO DE PACOTE DE SERVIÇO DOS CORREIOS",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-01-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-100/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE EQUIPAMENTOS DE LIMPEZA",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-105/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAIS DE CONSUMO- HIGIENE- PAPEL HIGIÊNICO",
+      "areaTecnica": "",
+      "abertura": "2026-12-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-144/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO DE ENXOVAL HOSPITALAR",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-128/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE IMÓVEL, TIPO GALPÃO,COM 1.772,20 M2 DE ÁREA CONSTRUÍDA",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-119/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DA ASSINATURA ANUAL PARA 25 ACESSOS AO SISTEMA DE BANCO DE PREÇOS",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-117/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "ANOTAÇÃO DE RESPONSABILIDADE TÉCNICA DOS DOCUMENTOS (ART)",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-97/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE OPME PARA ORTOPEDIA",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-90/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "ESPUMA ACÚSTICA",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-88/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE OPME ENDOVASCULAR",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-81/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "INSUMOS PARA LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-06-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-76/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-72/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA LABORATÓRIO",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-67/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇO PARA REALIZAÇÃO DE CIRURGIAS",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-26/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "COMPUTADOR E ESTABILIZADOR",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-11-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-61/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE PASSAGENS AÉREAS",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-60/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE ALIMENTAÇÃO PARA EVENTOS",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-45/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "MANUTENÇÃO DE NOBREAK",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-10-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-43/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "TELEFONIA MOVEL",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-40/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "REGISTRO DE SOFTWARE",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-36/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "OUTSOURCING DE IMPRESSÃO",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-34/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MÓDULO PARA DATACENTER",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-11-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-27/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "SWITCHES E ACCESS POITSP",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-11-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-25/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇOS MÉDICOS",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-24/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS DIVERSOS PARA SERVIÇOS PROFISSIONAIS E COMERCIAIS",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-23/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "COSMÉTICOS E ARTIGOS DE TOUCADOR DE NATUREZA MEDICINAL",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-20/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "ESSÊNCIA HIDROSSOLÚVEL PARA DIFUSOR ELÉTRICO 10 ML",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-19/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "POLTRONA RECLINÁVEL",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-18/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CHALEIRA ELÉTRICA",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-17/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTO PARA GINÁSTICA E RECREAÇÃO",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-16/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDALHAS ESPORTIVAS",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-15/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "ESSÊNCIA HIDROSSOLÚVEL PARA DIFUSOR ELÉTRICO 10 ML",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-14/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTO PARA COMBATE A INCÊNDIO",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-13/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MANGUEIRAS DE INCÊNDIO TIPO 2, PRESSÃO DE TRABALHO DE 14 KGF/CM², DIÂMETRO DE 1,5 POL (38 MM), COMPR",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-12/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "FITA ZEBRADA PRETA E AMARELA, DIMENSÕES 200 M X 70 MM",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-11/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "FITA ZEBRADA PRETA E AMARELA, DIMENSÕES 200 M X 70 MM",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-10/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONE FLEXÍVEL, NA COR LARANJA E BRANCO, COM ALTURA DE 760 MM, COM DUAS FAIXA REFLEXIVAS, COM PROTEÇÃ",
+      "areaTecnica": "",
+      "abertura": "2027-01-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-138/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PRESTAÇÃO DE SERVIÇOS DE COLETA E TRANSPORTE DE LIXO HOSPITALAR,NAS DEPENDÊNCIAS DAS UNIDADES",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-192/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MEDICAMENTOS POR DEMANDAS JUDICIAIS",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-193/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MEDICAMENTOS POR DEMANDAS JUDICIAIS",
+      "areaTecnica": "UNICAT - DEMANDAS",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-132/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE MOTORISTA CONDUTOR DE AMBULÂNCIA E MOTORISTA SOCORRISTA/ CONDUTOR",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-131/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE LOCAÇÃO DE MÃO DE OBRA- APOIO ADMINISTRATIVO E ASSISTENCIAIS PARA AS UNIDADES DA SESAP",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-157/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "CONTRATO AGRICULTURA FAMILIAR",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-10-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-130/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE LOCAÇÃO DE MÃO DE OBRA- APOIO ADMINISTRATIVO E ASSISTENCIAIS PARA AS UNIDADES DA SESAP",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-118/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MEDICAMENTOS POR DEMANDAS JUDICIAIS",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-115/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS PARA ATENDER DECISÃO JUDICIAL",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-95/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE DIETAS DESTINADAS AO ABASTECIMENTO HOSPITALAR",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-94/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE PRODUTOS PARA SAÚDE DESTINADOS A ATENDER DEMANDAS JUDICIAIS",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-93/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MEDICAMENTOS DE PRODUTOS PARA SAÚDE DESTINADOS AO ABASTECIMENTO HOSPITALAR",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-92/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MEDICAMENTOS DESTINADOS AOS PACIENTES CADASTRADOS NO COMPONENTE ESPECIALIZADO- CEAF",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-42/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CABEAMENTO ESTRUTURADO",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-11-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-91/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MEDICAMENTOS E PRODUTOS PARA SAÚDE DESTINADOS AO ABASTECIMENTO HOSPITALAR",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-9/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "RESPIRADOR DO TIPO PFF2 (S) N95, CONFORME ABNT/NBR 13698/2011",
+      "areaTecnica": "",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-8/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDIDOR DE VIBRAÇÕES OCUPACIONAIS",
+      "areaTecnica": "CGTES - NESST",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-7/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSTRUMENTOS PSICOMÉTRICOS (TESTES PSICOLÓGICOS PARA OS SEGUINTES CONSTRUCTOS : ATENÇÃO , MEMORIA ,",
+      "areaTecnica": "CGTES - NESST",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-08-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-6/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONCESSÃO DE INSCRIÇÕES PARA CONGRESSOS E EVENTOS",
+      "areaTecnica": "CGTES",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-09-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-5/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PASSAGENS AÉREAS PARA PARTICIPAÇÃO DE CONGRESSOS/EVENTOS",
+      "areaTecnica": "CGTES",
+      "abertura": "2027-02-01",
+      "conclusao": "2027-09-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-134/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PRESTAÇÃO DE SERVIÇO DE RECARGA E MANUTENÇÃO DE EXTINTORES",
+      "areaTecnica": "",
+      "abertura": "2027-03-01",
+      "conclusao": "2027-04-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-129/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LIMPEZA DE FOSSA E SUMIDOUROS",
+      "areaTecnica": "",
+      "abertura": "2027-03-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-122/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE CAMINHÕES ALMOXARIFADO E PATRIMÔNIO",
+      "areaTecnica": "",
+      "abertura": "2027-03-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-44/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE VIDEOMONITORAMENTO",
+      "areaTecnica": "",
+      "abertura": "2027-03-01",
+      "conclusao": "2027-12-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-35/2027",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS DE REDE",
+      "areaTecnica": "",
+      "abertura": "2027-03-01",
+      "conclusao": "2027-11-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-141/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE EMISSÃO DE PASSAGEM AÉREAS",
+      "areaTecnica": "",
+      "abertura": "2027-04-01",
+      "conclusao": "2027-05-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-140/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PRESTAÇÃO DE SERVIÇO DE MOTORISTA PARA VIAGEM INTERESTADUAL E ESTADUAL,FORA DA REGIAÕ METROPOLITANA",
+      "areaTecnica": "",
+      "abertura": "2027-04-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-39/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LINK DE DADOS REDUNDANTE",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2027-04-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-137/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "COLETA, TRANSPORTE E DESTINAÇÃO FINAL DE RESÍDUOS- GRUPO D ( LIXO COMUM)",
+      "areaTecnica": "",
+      "abertura": "2027-05-01",
+      "conclusao": "2027-07-01"
+    },
+    {
+      "ano": 2027,
+      "contratacaoPca": "925550-41/2027",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO TÉCNICOS DE TI (DESENVOLVIMENTO, GERENCIAMENTO, BI)",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2027-07-01",
+      "conclusao": "2027-10-01"
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "RECARGA E MANUTENÇÃO DE EXTINTORES DE INCÊNDIO",
+      "areaTecnica": "CGTES - NESST",
+      "abertura": "2025-08-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MEDIDOR E BALANCEADOR DE VIBRAÇÕES OCUPACIONAIS",
+      "areaTecnica": "CGTES - NESST",
+      "abertura": "2025-08-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE EQUIPAMENTOS E ACESSÓRIOS PARA PROCESSOS DE HIGINENIZAÇÃO E LIMPEZA",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-08-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CAPACITAÇÃO PARA NIVELAMENTO DA EQUIPE DA UGTSIC",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2025-08-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE INSUMOS PARA PICS (ÓLEOS ESSENCIAIS DIVERSOS E UMIDIFICADOR)",
+      "areaTecnica": "CGTES - QVT",
+      "abertura": "2025-08-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MOBILIÁRIO, EQUIPAMENTOS, UTENSÍLIOS SUPRIMENTOS PARA PRÁTICAS DE PICS",
+      "areaTecnica": "CGTES - QVT",
+      "abertura": "2025-08-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "SERVIÇOS DE TELEMEDICINA - DIAGNÓSTICO EM CARDIOLOGIA COM LAUDOS À DISTÂNCIA",
+      "areaTecnica": "CAS",
+      "abertura": "2025-08-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE TELEMEDICINA - TELERRADIOLOGIA (TC,RX,MAMOGRAFIA).",
+      "areaTecnica": "CAS",
+      "abertura": "2025-08-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MOBILIÁRIO PARA ALMOXARIFADOS",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-09-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS PARA ACONDICIONAMENTO E EMBALAGEM",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-09-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS GRÁFICOS PARA EVENTOS",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-09-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO PARA ADEQUAÇÃO DE INFRAESTRUTURA DA SALA COFRE",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2025-09-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS E AVIAMENTOS PARA COSTURA",
+      "areaTecnica": "COADI - SUAUP",
+      "abertura": "2025-09-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS DE HIGIENE E LIMPEZA DIVERSOS",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-10-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS DE LIMPEZA E DESINFECÇÃO DE SUPERFÍCIES",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-10-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS PARA HIGIENE DAS MÃOS",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-10-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE TUBOS PARA OS LABORATÓRIOS DE ANÁLISES CLÍNICAS.",
+      "areaTecnica": "CAS - LAPAT",
+      "abertura": "2025-10-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE INSUMOS PARA A REDE DE LABORATÓRIOS DE ANÁLISES CLÍNICAS.",
+      "areaTecnica": "CAS",
+      "abertura": "2025-10-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "SUBSTÂNCIAS PARA DIAGNÓSTICO \"IN VITRO\", REAGENTES, CONJUNTOS E JOGOS PARA TESTE",
+      "areaTecnica": "CAS",
+      "abertura": "2025-10-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAL ELÉTRICO E ELETRÔNICO PARA MANUTENÇÃO DE COMPUTADORES",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2025-11-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS PARA ARMAZENAGEM E TRANSPORTE DE RESÍDUOS",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-11-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS DE EXPEDIETE EM GERAL",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-11-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS DE EXPEDIENTE - PAPÉIS",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-11-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "CONTRATACOES_TIC",
+      "categoria": "Soluções de TIC",
+      "objeto": "CONTRATAÇÃO DE LICENÇAS DE SOFTWARE",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2025-11-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "CONTRATACOES_TIC",
+      "categoria": "Soluções de TIC",
+      "objeto": "CONTRATAÇÃO DE TELEFONIA FIXA E MÓVEL ATRAVÉS DE REDE DE IP",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2025-11-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "MANUTENÇÃO APARELHOS MÉDICOS - HOSPITALARES",
+      "areaTecnica": "COADI - SPI - GAEB",
+      "abertura": "2025-11-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA LAVANDERIAS HOSPITALARES",
+      "areaTecnica": "COADI - SAS",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE LEITOS DE UTI",
+      "areaTecnica": "CORSA",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE LICENCIAMENTO E CONTRATOS DE TRANSFERÊNCIA DE TECNOLOGIA",
+      "areaTecnica": "CGTES",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE ACESSÓRIOS DE TI (FONES, MICROFONES E ALTO-FALANTES)",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PRODUÇÃO DE MATERIAL GRÁFICO PARA AÇÕES ESTRATÉGICAS E EVENTOS VINCULADOS À EDUCAÇÃO EM SAÚDE",
+      "areaTecnica": "CAS",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇOS DE TRANSPORTE SANITÁRIO - MATERIAIS BIOLÓGICOS",
+      "areaTecnica": "CAS",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE GÁS GLP EM BOTIJÕES E CILINDROS",
+      "areaTecnica": "COADI - SUAUP",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE ÁGUA MINERAL",
+      "areaTecnica": "COADI - SUAUP",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE ABASTECIMENTO DE ÁGUA E COLETA DE ESGOTO SANITÁRIO",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE IMÓVEL",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE 10 (DEZ) LEITOS DE UTI ADULTO E 05 (CINCO) LEITOS CLÍNICOS DE ENFERMARIA DE RETAGUARDA E SESSÃO DE HEMODIÁLISE.",
+      "areaTecnica": "CORSA",
+      "abertura": "2025-12-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE TELEFONIA FIXA COMUTADA (STFC), TELECOMUNICA-ÇÕES MÓVEIS (SMP) E TELECOMUNICAÇÕES SATELITAIS",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "TRANSPORTE AÉREO",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "SISTEMA DE SINALIZAÇÃO DE TRÁFEGO E TRÂNSITO",
+      "areaTecnica": "CORSA - SAMU",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "VESTUÁRIO PARA FINS ESPECIAIS - SAMU",
+      "areaTecnica": "CORSA - SAMU",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS MÉDICOS E CIRÚRGICOS",
+      "areaTecnica": "CORSA - SAMU",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MOBILIÁRIO, EQUIPAMENTOS, UTENSÍLIOS E SUPRIMENTOS HOSPITALARES",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - DIVERSOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - TRATO GASTROINTESTINAL",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - ANALGÉSICOS, ANTIINFLAMATÓRIOS E ANTIHISTAMÍNICOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - ANESTÉSICOS E BLOQUEADORES MUSCULARES",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - ANTIFÚNGICOS, ANTIVIRAIS E ANTIPARASITÁRIOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - ANTIHIPERTENSIVOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - ANTIMICROBIANOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - LINHA CARDIOVASCULAR",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - SISTEMA HEMATOPOIÉTICO",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - SISTEMA RESPIRATÓRIO E ENDÓCRINO",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - PENICILINAS E CEFALOSPORINAS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MEDICAMENTOS DESTINADOS AO ABASTECIMENTO HOSPITALAR - VITAMINAS DA LINHA HOSPITALAR",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - CURATIVOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - NEUROCIRURGIAS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - SOLUÇÕES E SANEANTES",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - HIGIENE E PROTEÇÃO",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - SONDAS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - PAPEL GRAU",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - CÂNULAS E TUBOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - DRENOS, COLETORES E FILMES",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - EQUIPOS DE BOMBA",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - CATÉTERES",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - MATERIAIS DIVERSOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - FIOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS MÉDICOS E CIRÚRGICOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "ALIMENTOS ESPECIAIS DIETÉTICOS E PREPARADOS ALIMENTÍCIOS - FÓRMULAS INFANTIS TAC/APLV",
+      "areaTecnica": "UNICAT - NUTRIÇÃO",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO MEDICAMENTOS CEAF",
+      "areaTecnica": "UNICAT - CEAF",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MEDICAMENTOS - DERMATOLÓGICOS",
+      "areaTecnica": "UNICAT - DEMANDAS JUDICIAIS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "COMPRA DE PASSAGENS AÉREAS PARA AÇÕES INSTITUCIONAIS E REGIONAIS DA SESAP",
+      "areaTecnica": "CGTES",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "IMPRESSOS DIVERSOS",
+      "areaTecnica": "CGTES - NESST",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE BANCA PARA PROCESSO SELETIVO DE RESIDÊNCIAS MÉDICAS, DE ÁREA PROFISSIONAL E MULTIPROF",
+      "areaTecnica": "CGTES",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "INSTALAÇÃO / MANUTENÇÃO / OPERAÇÃO E LOCAÇÃO PARA EVENTOS (IMAGEM, SOM E LUZ)",
+      "areaTecnica": "CGTES",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "INSCRIÇÕES EM EVENTOS",
+      "areaTecnica": "CGTES",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇOS MÉDICOS",
+      "areaTecnica": "CGTES",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "REFEIÇÕES PREPARADAS",
+      "areaTecnica": "COADI - SUAUP",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "VESTUÁRIO PARA FINS ESPECIAIS - LACEN",
+      "areaTecnica": "LACEN",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "ALIMENTAÇÃO PREPARADA",
+      "areaTecnica": "CVS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "MANUTENÇÃO PREDIAL",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS GERAIS DE CONSTRUÇÃO DOS EDIFÍCIOS",
+      "areaTecnica": "COADI - SPI",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LICENCIAMENTO DE DIREITOS PERMANENTE PARA USO DE SOFTWARE - BANCO DE PREÇOS",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PRESTAÇÃO DE SERVIÇO DE TRANSPORTE PARA SERVIDOR - CONDUÇÃODE VEÍCULO - OUTRAS NECESSIDADES",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "DISTRIBUIÇÃO / ENTREGA DE CONTA - LUZ, TELEFONE, ÁGUA, GÁS",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LIMPEZA DE FOSSAS/ESGOTOS/BOCA DE LOBO",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "MANUTENÇÃO/HIGIENIZAÇÃO DE RESERVATÓRIOS DE ÁGUA",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE LOCAÇÃO DE MÃO DE OBRA - APOIO ADMINISTRATIVO E ASSISTENCIAIS",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE MOTORISTAS",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "MANUTENÇÃO DE VEÍCULOS LEVES E PESADOS",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "COLETA E TRATAMENTO DE LIXO HOSPITALAR",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "TRATAMENTO DE RESÍDUOS",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE RECARGA E MANUTENÇÃO DE EXTINTORES",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "DESINSETIZAÇÃO /DESRATIZAÇÃO / DEDETIZAÇÃO",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE EPIs - SAMU",
+      "areaTecnica": "CORSA - SAMU",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LIVROS E FOLHETOS - PUBLICAÇÃO",
+      "areaTecnica": "CGTES - ESPRN",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE SEGUROS E DE PENSÕES(EXCETO SERVIÇO DE RESEGURO)",
+      "areaTecnica": "CGTES - ESPRN",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "COOPERAÇÃO / CONVÊNIOS / CONTRATOS - ÁREA NACIONAL E INTERNACIONAL",
+      "areaTecnica": "CGTES - ESPRN",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LICENÇA DE SOFTWARES",
+      "areaTecnica": "CGTES - ESPRN",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇO DE TRANSPORTE",
+      "areaTecnica": "CGTES - ESPRN",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS MÉDICOS E CIRÚRGICOS",
+      "areaTecnica": "CVS - SVO",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS QUÍMICOS",
+      "areaTecnica": "CVS - SUVAM",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE EQUIPAMENTOS ENERGÉTICOS",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "VESTUÁRIO PARA FINS ESPECIAIS - SUETO",
+      "areaTecnica": "CORSA - SUETO",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "GÊNEROS ALIMENTÍCIOS (GRUPOS DIVERSOS)",
+      "areaTecnica": "COADI - SUAUP",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "GÊNEROS ALIMENTÍCIOS DA AGRICULTURA FAMILIAR",
+      "areaTecnica": "COADI - SUAUP",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "DROGAS E MEDICAMENTOS DISPENSADOS POR DEMANDA JUDICIAL - JANEIRO",
+      "areaTecnica": "UNICAT - DEMANDAS JUDICIAIS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "PRODUTOS PARA SAÚDE - AGULHAS, SERINGAS E EQUIPOS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "VESTUÁRIO HOSPITALAR E CIRÚGICO E ITENS CORRELATOS DE FINALIDADES ESPECIAIS - FRALDAS",
+      "areaTecnica": "UNICAT - HOSPITALAR",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CIRURGIAS ELETIVAS",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE OXIGENIOTERAPIA",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE ASSISTÊNCIA DOMICILIAR",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "NEFROLOGIA - CONSULTA MÉDICA - NEFROLOGIA",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "NEFROLOGIA - IMPLANTE DE CATÉTER VENOSO PARA HEMODIÁLISE",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE VEÍCULOS",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "ACESSÓRIOS DISPOSITIVOS PARA HOSPITAIS - MATERNIDADES",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE BOLSAS DE ESTOMIAS E ADJUVANTES",
+      "areaTecnica": "CAS - CERAE",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS MÉDICOS E CIRÚRGICOS",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MOBILIÁRIO, EQUIPAMENTOS, UTENSÍLIOS E SUPRIMENTOS HOSPITALARES - CERAE",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS PARA ESTERILIZAÇÃO",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇOS DE EVENTOS",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "EMISSÃO DE PASSAGENS AÉREAS",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇOS DE EXAMES AMBULATORIAIS",
+      "areaTecnica": "CAS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "ENXOVAL HOSPITALAR",
+      "areaTecnica": "COADI - SUAUP",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS POSTAL E DE CORREIO",
+      "areaTecnica": "COADI - SCS",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE EPIs - NESST",
+      "areaTecnica": "CGTES - NESST",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MANUTENÇÃO EXTINTORES / MANGUEIRAS - COMBATE INCÊNDIO",
+      "areaTecnica": "CGTES - NESST",
+      "abertura": "2026-01-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇO DE REESTRUTURAÇÃODA REDE LÓGICA DAS UNIDADES HOSPITALARES",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MOBILIÁRIO PARA ESCRITÓRIO",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "FORNECIMENTO DE REFEIÇÕES / LANCHES / SALGADOS / DOCES",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PRESTAÇÃO DE SERVIÇOS FUNERÁRIOS",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE VIGILÂNCIA PATRIMONIAL",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "ACESSÓRIOS PARA TREINAMENTO",
+      "areaTecnica": "CORSA - SAMU",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS E UTENSÍLIOS PARA TRANSPORTE DE PACIENTES VÍTIMAS DE TRAUMA.",
+      "areaTecnica": "CORSA - SAMU",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTO E MATERIAIS PARA BANCOS DE LEITE HUMNO",
+      "areaTecnica": "CAS",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE COMPUTADORES",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "DROGAS E MEDICAMENTOS DISPENSADOS POR DEMANDA JUDICIAL - FEVEREIRO",
+      "areaTecnica": "UNICAT - DEMANDAS JUDICIAIS",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE MATERIAL DE PROCESSAMENTO DE DADOS",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE EQUIPAMENTOS PARA O LABORATÓRIO DE GENÉTICA HUMANA E GENÔMICA DO CENTRO ESTADUAL DE REABILITAÇÃO E ATENÇÃO AMBULATORIAL ESPECIALIZADA - MATERIAL PERMANENTE.",
+      "areaTecnica": "CAS",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS E SUPRIMENTOS DE IMAGEM",
+      "areaTecnica": "CAS",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS DE NEONATOLOGIA/OBSTETRÍCIA",
+      "areaTecnica": "CAS",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS MÉDICOS E CIRÚRGICOS - FRACASSADOS EM PROCESSOS ANTERIORES",
+      "areaTecnica": "CAS",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MOBILIÁRIO E EQUIPAMENTOS DE KIT LEITO CLÍNICO",
+      "areaTecnica": "CAS",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTOS E ARTIGOS DE LABORATÓRIO",
+      "areaTecnica": "CAS",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONSULTORIA ESPECIALIZADA PARA CAPACITAÇÃO DOS COMPONENTES DA REDE DE ATENÇÃO PSICOSSOCIAL (RAPS) EM SAÚDE MENTAL.",
+      "areaTecnica": "CAS",
+      "abertura": "2026-02-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTO PARA SEGURANÇA E SALVAMENTO",
+      "areaTecnica": "CORSA - SAMU",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "EQUIPAMENTO PARA SEGURANÇA E SALVAMENTO",
+      "areaTecnica": "CAS",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "VEÍCULOS SOBRE RODAS",
+      "areaTecnica": "CAS",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "EQUIPAMENTOS E ARTIGOS DE LABORATÓRIO",
+      "areaTecnica": "CAS",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE LEASING OU ALUGUEL RELACIONADOS A OUTROS BENS",
+      "areaTecnica": "CAS",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS DE SAÚDE HUMANA, PATOLOGIA CLÍNICA - HEMATOLOGIA",
+      "areaTecnica": "CAS",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SUBSTÂNCIAS PARA DIAGNÓSTICO \"IN VITRO\", REAGENTES, CONJUNTOS E JOGOS PARA TESTE",
+      "areaTecnica": "CAS",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "DROGAS E MEDICAMENTOS DISPENSADOS POR DEMANDA JUDICIAL - MARÇO",
+      "areaTecnica": "UNICAT - DEMANDAS JUDICIAIS",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE SERVIÇO DE FORNECIMENTO DE EQUIPAMENTO DE COAGULAÇÃO AUTOMATIZADOS, INSUMOS, CALIBRADORES, CONTROLES, REAGENTES E INTEGRAÇÃO/INTERFACEAMENTO.",
+      "areaTecnica": "CAS",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "LOCAÇÃO DE EQUIPAMENTO DE LABORATÓRIO",
+      "areaTecnica": "CAS",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "FORNECIMENTO DE REFEIÇÕES / LANCHES / SALGADOS / DOCES",
+      "areaTecnica": "CORSA - SUETO",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATÇÃO DE OUTSOURCING DE IMPRESSÃO",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAIS GERAIS PARA VIGILÂNCIA - TERMO DE INSPEÇÃO SANITÁRIA, RECEITUÁRIOS A, ENVELOPE DE SEGURANÇA P COLETA DE AMOSTRA, CAIXAS TÉRMICAS 60 E 40 L COM RODAS E TERMÔMETRO, TERMÔMETROS DIGITAIS E TERMÔMETROS COM HASTE METÁLICA-ESPETO",
+      "areaTecnica": "CVS - SUVISA",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "COMPUTADORES",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "COLCHÕES HOSPITALARES",
+      "areaTecnica": "COADI - SUAUP",
+      "abertura": "2026-03-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "DIAGNÓSTICO POR IMAGEM (TOMOGRAFIA/CINTILOGRAFIA/RESSONÂNCIA)",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PROCEDIMENTOS - CIRURGIA VASCULAR",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PROCEDIMENTOS DIAGNÓSTICOS - HEMODINÂMICA",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "RADIODIAGNÓSTICO - DENSITOMETRIA ÓSSEA",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PROCEDIMENTOS DIAGNÓSTICOS - MEDICINA NUCLEAR",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "TRATAMENTO - NEFROLOGIA - HEMODIÁLISE",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "TRATAMENTO - NEFROLOGIA - LITÍASE RENAL",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "TRATAMENTO AMBULATORIAL - QUIMIOTERAPIA",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "REALIZAÇÃO DE PROCEDIMENTOS CLÍNICOS, CIRÚRGICOS E/OU DIAGNÓSTICO PARA OS PORTADORES DE DOENÇAS RENAIS CRÔNICAS/TRS",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PRESTAÇÃO DE SERVIÇO DE SAÚDE EM MÉDIA E ALTA COMPLEXIDADE AMBULATORIAL, PARA REALIZAÇÃO DE SERVIÇOS DE NEUROLOGIA NEUROCIRURGIA..",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "PRESTAÇÃO DE SERVIÇO DE SAÚDE EM MÉDIA E ALTA COMPLEXIDADE AMBULATORIAL (CIRURGIA VASCULAR DE MEMBROS INFERIORES (AMPUTAÇÃO, FASCIOTOMIA, DESBRIDAMENTO).",
+      "areaTecnica": "CORSA",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "MATERIAIS TÉRMICOS",
+      "areaTecnica": "CORSA - SUETO",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "SERVIÇOS GRÁFICOS (SELO/CONVITE/IMPRESSOS",
+      "areaTecnica": "CORSA - SUETO",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "ARTIGOS PARA AÇÕES ADMINISTRATIVAS",
+      "areaTecnica": "CORSA - SUETO",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "SERVIÇOS",
+      "categoria": "Serviço",
+      "objeto": "CONTRATAÇÃO DE LINK DEDICADO",
+      "areaTecnica": "UGTSIC",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAL PERMANENTE/ EQUIPAMENTO PARA O SETOR DE NUTRIÇÃO",
+      "areaTecnica": "CAS-CERAE",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "AQUISIÇÃO DE UTENSÍLIOS DE CUTELARIA",
+      "areaTecnica": "CAS",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAL PERMANENTE PARA ODONTOLOGIA",
+      "areaTecnica": "CAS-CERAE",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "MATERIAL DE CONSUMO PARA O NÚCLEO DE ATENDIMENTO INTEGRAL AO FISSURADO - NAIF",
+      "areaTecnica": "CAS-CERAE",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    },
+    {
+      "ano": 2026,
+      "contratacaoPca": "",
+      "categoriaOriginal": "BENS",
+      "categoria": "Material",
+      "objeto": "INSUMOS PARA MICROSCOPIA",
+      "areaTecnica": "CAS",
+      "abertura": "2026-04-01",
+      "conclusao": null
+    }
+  ]
+}
